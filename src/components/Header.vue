@@ -15,7 +15,9 @@ export default {
                         <router-link :to="{ name: 'account' }">
                             <i class="fa-regular fa-circle-user"></i>
                         </router-link>
-                        <a href="/html/cart.html"><i class="fa-solid fa-cart-arrow-down"></i></a>
+                        <router-link :to="{ name: 'cart' }">
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        </router-link>
                     </nav>
                 </div>
             </div>
