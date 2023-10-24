@@ -54,8 +54,10 @@ export default {
                     <li>Vérifier vos commandes</li>
                     <li>Gérer votre collection et vos services commandés</li>
                 </ul>
-                <button type="submit" id="create_account_btn" onclick="window.location.href='createaccount.html'">créer mon
+                <router-link :to="{ name: 'createaccount' }">
+                    <button type="submit" id="create_account_btn">créer mon
                     compte</button>
+                </router-link>
             </div>
         </div>
     </div>
@@ -66,31 +68,37 @@ export default {
     background-color: #ddd;
     margin-bottom: 50px;
 }
+
 .register {
     padding: 50px 50px;
     /* border-right: 1px solid grey; */
     width: auto;
 }
+
 .create_account {
     padding: 50px 50px;
 }
+
 .register h1 {
     font-family: 'Arapey', serif;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 30px;
 }
+
 .register p {
     font-family: 'Arapey', serif;
     font-size: 18px;
     width: 80%;
 }
+
 .connection_form h2 {
     margin-bottom: 10px;
     color: grey;
     font-size: 15px;
     font-family: 'Arapey', serif;
 }
+
 .email_div input {
     border: 0;
     border-bottom: 1px solid #000;
@@ -100,28 +108,34 @@ export default {
     width: 80%;
     background-color: #ddd;
 }
+
 .connection_form #forgot_password {
     color: black;
     text-decoration: none;
     font-family: 'Arapey', serif;
     font-size: 15px;
 }
+
 .connection_form #forgot_password:hover {
     text-decoration: underline;
 }
+
 .connection_form p {
     margin-top: 20px;
     font-size: 15px;
 }
+
 .connection_form a {
     color: black;
     text-decoration: underline;
     font-family: 'Arapey', serif;
     font-size: 15px;
 }
+
 .connection_form a:hover {
     text-decoration: none;
 }
+
 #connexion {
     min-height: 50px;
     width: 200px;
@@ -132,31 +146,37 @@ export default {
     text-transform: uppercase;
     font-size: 20px;
 }
+
 #connexion:hover {
     background-color: rgb(227, 167, 14);
     color: white;
 }
+
 .create_account h1 {
     font-family: 'Arapey', serif;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 30px;
 }
+
 .create_account p {
     font-family: 'Arapey', serif;
     font-size: 18px;
     width: 100%;
 }
+
 .create_account ul {
     list-style-type: disc;
     width: 100%;
 }
+
 .create_account li {
     font-family: 'Arapey', serif;
     font-size: 18px;
     margin-top: 10px;
     margin-left: 20px;
 }
+
 #create_account_btn {
     min-height: 50px;
     width: 250px;
@@ -167,6 +187,7 @@ export default {
     text-transform: uppercase;
     font-size: 20px;
 }
+
 #create_account_btn:hover {
     background-color: rgb(227, 167, 14);
     color: white;

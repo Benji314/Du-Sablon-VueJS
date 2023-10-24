@@ -9,12 +9,14 @@ import App from './App.vue'
 import Account from './components/Account.vue'
 import Bracelets from './components/Bracelets.vue'
 import Cart from './components/Cart.vue'
+import Createaccount from './components/Createaccount.vue'
 
 
 const routes = [
     {path: '/mon-compte', component: Account, name: "account" },
     {path: '/bracelets', component: Bracelets, name: "bracelets" },
     {path: '/mon-panier', component: Cart, name: "cart" },
+    {path: '/inscription', component: Createaccount, name: "createaccount" },
 ]
 
 const router = createRouter({
