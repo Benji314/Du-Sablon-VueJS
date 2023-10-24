@@ -11,14 +11,17 @@ import Account from './components/Account.vue'
 import Bracelets from './components/Bracelets.vue'
 import Cart from './components/Cart.vue'
 import Createaccount from './components/Createaccount.vue'
+import DetailProduct from './components/DetailProduct.vue'
 
 
 const routes = [
+    {path: '/accueil', component: Home, name: "home" },
     {path: '/mon-compte', component: Account, name: "account" },
     {path: '/bracelets', component: Bracelets, name: "bracelets" },
     {path: '/mon-panier', component: Cart, name: "cart" },
     {path: '/inscription', component: Createaccount, name: "createaccount" },
-    {path: '/accueil', component: Home, name: "home" },
+    {path: '/details-produit', component: DetailProduct, name: "detailproduct" },
+    
 ]
 
 const router = createRouter({

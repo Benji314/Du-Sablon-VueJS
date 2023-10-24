@@ -73,9 +73,12 @@ export default {
                             <h1>{{ bracelet.name }}</h1>
                             <p>Du Sablon</p>
                             <h2>€ {{ bracelet.unitPrice }}</h2>
-                            <a :href="'/html/detailproduit.html?id=' + bracelet.id" class="buy_btn_a">
+                            <!-- <a :href="'/html/detailproduit.html?id=' + bracelet.id">
                                 <button class="buy_btn">ACHETER</button>
-                            </a>
+                            </a> -->
+                            <router-link :to="{ name: 'detailproduct' }">
+                                <button class="buy_btn">ACHETER</button>
+                            </router-link>
                         </div>
                     </div>
                 </div>
