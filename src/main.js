@@ -8,11 +8,13 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import App from './App.vue'
 import Account from './components/Account.vue'
 import Bracelets from './components/Bracelets.vue'
+import Cart from './components/Cart.vue'
 
 
 const routes = [
     {path: '/mon-compte', component: Account, name: "account" },
     {path: '/bracelets', component: Bracelets, name: "bracelets" },
+    {path: '/mon-panier', component: Cart, name: "cart" },
 ]
 
 const router = createRouter({

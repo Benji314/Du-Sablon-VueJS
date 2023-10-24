@@ -4,33 +4,27 @@ GLOBAL
 * {
     box-sizing: border-box;
 }
-
 html {
     scroll-behavior: smooth;
 }
-
 img {
     max-width: 100%;
     vertical-align: middle;
     height: auto;
 }
-
 iframe {
     max-width: 100%;
     display: block;
 }
-
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 a {
     text-decoration: none;
     transition: all 0.5s ease;
 }
-
 body {
     word-wrap: break-word;
     /* font-family: 'Arapey', serif; */
@@ -44,9 +38,6 @@ body {
     opacity: 1;
     height: 100%;
 }
-
-/***************************************************
-***************************************************/
 .flex {
     display: flex;
     /* justify-content: space-between; */
@@ -55,13 +46,11 @@ body {
     flex-wrap: wrap;
     align-items: flex-start;
 }
-
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 /***************************************************
 ***************************************************/
 .row_class {
@@ -69,71 +58,58 @@ nav ul {
     min-height: 50px;
     margin-bottom: 50px;
 }
-
 .row_class2 {
     /* border: 1px solid blue; */
     margin-bottom: 10px;
 }
-
 .col_class {
     /* border: 1px solid green; */
     min-height: 50px;
 }
-
 /***************************************************
+HEADER
 ***************************************************/
 .logo_top {
     width: 100%;
 }
-
 .main-nav {
     text-align: center;
 }
-
 .main-nav i {
     color: grey;
     font-weight: 600;
     font-size: 30px;
 }
-
 .main-nav i:hover {
     color: rgb(227, 167, 14);
 }
-
-/***************************************************
-***************************************************/
 .nav_menu li {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
 }
-
 .nav_search {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     ;
 }
-
 .main-nav-menu li {
     color: black;
     font-weight: 600;
 }
-
 .main-nav-menu a {
     color: black;
     font-weight: 600;
     font-size: 20px;
     transition: font-size 0.5s ease-in-out;
 }
-
 .main-nav-menu i {
     color: black;
     font-weight: 600;
     font-size: 25px;
     margin-left: 5px;
 }
-
 .main-nav-menu a:hover {
     font-size: calc(20px + 3px);
     text-decoration: underline;
@@ -141,40 +117,34 @@ nav ul {
     text-decoration-thickness: 0.2rem;
     text-underline-offset: 8px;
 }
-
 .main-nav-menu i:hover {
     color: rgb(227, 167, 14);
 }
-
 .vertical-line {
     border: 2px solid #000;
     display: inline-block;
     height: 25px;
 }
-
 /***************************************************
+FOOTER
 ***************************************************/
 hr {
     color: black;
     margin: 0px;
     margin-bottom: 20px;
 }
-
 .hr_class {
     margin-bottom: 50px;
 }
-
 .reseaux {
     text-align: center;
 }
-
 .reseaux h1 {
     font-size: 30px;
     font-weight: 600;
     font-family: 'Arapey', serif;
     margin-bottom: 30px;
 }
-
 .reseaux-nav i {
     color: rgb(227, 167, 14);
     font-weight: 600;
@@ -184,18 +154,15 @@ hr {
     margin-bottom: 20px;
 
 }
-
 .reseaux-nav i:hover {
     color: black;
 }
-
 /***************************************************
 ***************************************************/
 .service_client {
     text-align: left;
     /* border: 1px solid green; */
 }
-
 .service_client h1 {
     font-size: 30px;
     font-weight: 600;
@@ -203,7 +170,6 @@ hr {
     text-align: center;
     margin-bottom: 30px;
 }
-
 .service_client h5 {
     font-size: 17px;
     color: #000;
@@ -213,13 +179,9 @@ hr {
     transition: font-size 0.2s ease-in-out;
 
 }
-
 .service_client h5:hover {
     font-size: 17.5px;
 }
-
-/***************************************************
-***************************************************/
 .row_class_footer {
     /* border: 1px solid blue; */
     background-color: rgb(227, 167, 14);
