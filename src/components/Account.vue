@@ -36,10 +36,12 @@ export default {
                         <a href="" id="forgot_password">
                             <p>Vous avez oublié votre mot de passe ?</p>
                         </a>
-                        <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à caractère personnel,
-                            veuillez
-                            consulter notre <a href="">Politique de Confidentialité.</a></p>
-                        <button type="submit" id="connexion">connexion</button>
+                        <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à   caractère personnel, veuillez consulter notre 
+                            <a href="">Politique de Confidentialité.</a>
+                        </p>
+                        <router-link :to="{ name: 'login' }">
+                            <button type="submit" id="connexion">connexion</button>
+                        </router-link>
                     </form>
                 </div>
             </div>

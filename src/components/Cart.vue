@@ -67,7 +67,7 @@ export default {
                             <td class="d-none d-sm-table-cell">{{ product.name }}</td>
                             <td class="price_unit">{{ product.unitPrice }} €</td>
                             <td class="quantity">
-                                <input @input="updateTotalLine(product)" v-model="product.quantity" type="number" />
+                                <input @input="updateTotalLine(product)" v-model="product.quantity" type="number" min="0"/>
                             </td>
                             <td class="total_price">{{ product.totalLine }} €</td>
                             <td class="delete mt-5 d-none d-md-block">

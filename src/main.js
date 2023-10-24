@@ -12,6 +12,7 @@ import Bracelets from './components/Bracelets.vue'
 import Cart from './components/Cart.vue'
 import Createaccount from './components/Createaccount.vue'
 import DetailProduct from './components/DetailProduct.vue'
+import Login from './components/Login.vue'
 
 
 const routes = [
@@ -21,6 +22,7 @@ const routes = [
     {path: '/mon-panier', component: Cart, name: "cart" },
     {path: '/inscription', component: Createaccount, name: "createaccount" },
     {path: '/details-produit', component: DetailProduct, name: "detailproduct" },
+    {path: '/mon-compte', component: Login, name: "login" },
     
 ]
 
