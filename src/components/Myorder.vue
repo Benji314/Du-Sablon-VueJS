@@ -31,7 +31,9 @@ export default {
                             </router-link>
                         </li>
                         <li>
-                            <a href="">ma wishlist</a>
+                            <router-link :to="{ name: 'wishlist' }">
+                                ma wishlist
+                            </router-link>
                         </li>
                     </ul>
                 </nav>

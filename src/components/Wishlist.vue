@@ -49,20 +49,21 @@ export default {
             </div>
 
             <div class="row row_class2">
-                <div class="col-md-12 col_class user_adress">
-                    <h3>Carnet d'adresses</h3>
-                    <p>Sauvegardez toutes vos adresses de livraison pour effectuer plus rapidement vos achats. <br> Si vous
-                        avez une adresse préférée, indiquez-la comme prédéfinie : le champ sera déjà rempli dans votre
-                        Panier.</p>
-
-                    <div class="new_adress">
-                        <p>Vous n'avez pas encore sauvegardé d'adresses de livraison</p>
-                        <div class="add_new_adress">
+                <div class="col-md-12 col_class my_wishlist">
+                    <h3>Ma Wishlist</h3>
+                    <p>Créez votre Sélection en ajoutant les articles que vous aimez. Vous pouvez ajouter jusqu’à 50 articles, vérifier leur disponibilité et les ajouter à votre Panier à tout moment.</p>
+                    <hr>
+                    <div class="wishlist_user">
+                        <p>La sélection de (USER)</p>
+                        <div class="share_wishlist">
                             <a href="">
-                                <i class="fa-solid fa-plus"></i>
-                                <p>AJOUTER UNE NOUVELLE ADRESSE</p>
+                                <i class="fa-solid fa-share-nodes"></i>
+                                <p>PARTAGER LA WISHLIST</p>
                             </a>
                         </div>
+                    </div>
+                    <div class="wishlist_content">
+                        <p>Votre Wish List ne contient aucun article.</p>
                     </div>
                 </div>
             </div>
@@ -71,48 +72,49 @@ export default {
 </template>
 
 <style scoped>
-.user_adress h3 {
+.my_wishlist h3 {
     font-family: 'Arapey', serif;
     margin-top: 50px;
     font-weight: bold;
 }
-.user_adress p {
+.my_wishlist p {
     font-family: 'Arapey', serif;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 30px 20px 0px;
     font-size: 16px;
 }
-.new_adress {
+.wishlist_user {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.new_adress p {
-    margin-right: 20px;
-    color: black;
-    font-size: 16px;
-    font-family: 'Arapey', serif;
-}
-.add_new_adress a {
+.share_wishlist a {
     display: flex;
     align-items: center;
     margin-right: 60px;
 }
-.add_new_adress i {
-    font-size: 25px;
+.wishlist_user p {
+    text-transform: uppercase;
     color: black;
+    font-size: 20px;
+    font-family: 'Arapey', serif;
+    font-weight: bold;
+}
+.share_wishlist i {
+    font-size: 20px;
+    color: rgb(227, 167, 14);
     margin-right: 10px;
 }
-.add_new_adress p {
+.share_wishlist p {
     margin: 0;
-    font-weight: bold;
     font-size: 18px;
-    text-decoration: underline;
-    text-decoration-color: black;
-    text-decoration-thickness: 0.1rem;
-    text-underline-offset: 4px;
+    font-weight: normal;
 }
-.add_new_adress p:hover {
-    text-decoration: none;
+.share_wishlist p:hover {
+    text-decoration: underline;
+}
+.wishlist_content{
+    margin: 50px 0px;
+    font-size: 16px;
+    font-family: 'Arapey', serif;
 }
 </style>

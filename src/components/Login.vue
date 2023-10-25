@@ -31,7 +31,9 @@ export default {
                             </router-link>
                         </li>
                         <li>
-                            <a href="">ma wishlist</a>
+                            <router-link :to="{ name: 'wishlist' }">
+                                ma wishlist
+                            </router-link>
                         </li>
                     </ul>
                 </nav>
@@ -80,7 +82,11 @@ export default {
                 <div class="col-md-6 col_class div_user">
                     <h3>MA WISHLIST</h3>
                     <p>Vous n'avez pas encore ajouté de produit à votre wishlist.</p>
-                    <p><a href="">Voir ma wishlist</a></p>
+                    <p>
+                        <router-link :to="{ name: 'wishlist' }">
+                            Voir ma wishlist
+                        </router-link>
+                    </p>
                 </div>
             </div>
         </div>
@@ -94,26 +100,29 @@ export default {
     padding: 40px;
     border: 0.5px solid black;
 }
+
 .div_user h3 {
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 30px;
 }
+
 .div_user p {
     font-family: 'Arapey', serif;
     font-size: 16px;
 }
+
 .div_user a {
     color: black;
     font-family: 'Arapey', serif;
     font-size: 16px;
     transition: font-size 0.5s ease-in-out;
 }
+
 .div_user a:hover {
     font-size: calc(16px + 1px);
     text-decoration: underline;
     text-decoration-color: rgb(227, 167, 14);
     text-decoration-thickness: 0.1rem;
     text-underline-offset: 4px;
-}
-</style>
+}</style>
