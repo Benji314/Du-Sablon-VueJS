@@ -9,7 +9,9 @@ export default {
             <div class="row row_class">
                 <div class="col-10 offset-1 col-md-8 offset-md-2 col_class">
                     <div class="graine-cafe">
-                        <a href="/html/detailproduit.html"><img src="/img/R1241.001.png" alt=""></a>
+                        <router-link :to="{ name: 'detailproduct' }">
+                            <img src="/img/R1241.001.png" alt="">
+                        </router-link>
                         <h1>GRAINE DE CAFE</h1>
                         <a href="">
                             <p class="discover">Découvrir la collection</p>
@@ -85,6 +87,9 @@ export default {
 </template>
 
 <style scoped>
+.discover:hover{
+    text-decoration: underline;
+}
 .graine-cafe {
     margin-left: auto;
     margin-right: auto;

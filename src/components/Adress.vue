@@ -11,7 +11,7 @@ export default {
                 <nav>
                     <ul class="profil_menu">
                         <li><a href="/html/login.html">aperçu</a></li>
-                        <li><a href="/html/profile.html">mon profilL</a></li>
+                        <li><a href="/html/profile.html">mon profil</a></li>
                         <li><a href="/html/myorder.html">mes commandes</a></li>
                         <li>
                             <router-link :to="{ name: 'adress' }">
@@ -27,34 +27,27 @@ export default {
         <div class="col-md-8 col_class">
             <div class="row row_class2 welcome_user">
                 <h2>BIENVENUE USER</h2>
-                <p>À partir de votre compte Du Sablon, vous pouvez gérer et garder la trace de votre expérience d’achat
-                    personnalisée sur la boutique en ligne Du Sablon.</p>
+                <p>À partir de votre compte Du Sablon, vous pouvez gérer et garder la trace de votre expérience
+                    d’achat personnalisée sur la boutique en ligne Du Sablon.</p>
                 <button id="disconnect">déconnexion</button>
             </div>
 
-            <div class="row">
-                <div class="col-md-6 col_class div_user">
-                    <h3>MON PROFIL</h3>
-                    <p>M. Benjamin Perreau</p>
-                    <p>benjaminperreau1@gmail.com</p>
-                    <p><a href="/html/profile.html">Voir mon profil</a></p>
-                </div>
-                <div class="col-md-6 col_class div_user">
-                    <h3>MES COMMANDES</h3>
-                    <p>Vous n'avez pas encore commandé en tant qu'utilisateur inscrit.</p>
-                    <p><a href="/html/myorder.html">Voir mes commandes</a></p>
-                </div>
-            </div>
             <div class="row row_class2">
-                <div class="col-md-6 col_class div_user">
-                    <h3>MES ADRESSES</h3>
-                    <p>Vous n'avez aucune adresse sauvegardée.</p>
-                    <p><a href="/html/adress.html">Voir mes adresses</a></p>
-                </div>
-                <div class="col-md-6 col_class div_user">
-                    <h3>MA WISHLIST</h3>
-                    <p>Vous n'avez pas encore ajouté de produit à votre wishlist.</p>
-                    <p><a href="">Voir ma wishlist</a></p>
+                <div class="col-md-12 col_class user_adress">
+                    <h3>Carnet d'adresses</h3>
+                    <p>Sauvegardez toutes vos adresses de livraison pour effectuer plus rapidement vos achats. <br> Si vous
+                        avez une adresse préférée, indiquez-la comme prédéfinie : le champ sera déjà rempli dans votre
+                        Panier.</p>
+
+                    <div class="new_adress">
+                        <p>Vous n'avez pas encore sauvegardé d'adresses de livraison</p>
+                        <div class="add_new_adress">
+                            <a href="">
+                                <i class="fa-solid fa-plus"></i>
+                                <p>AJOUTER UNE NOUVELLE ADRESSE</p>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,32 +116,48 @@ export default {
     background-color: rgb(227, 167, 14);
     color: white;
 }
-.div_user {
-    width: calc(50% - 20px);
-    margin: 10px;
-    padding: 40px;
-    border: 0.5px solid black;
-}
-.div_user h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 30px;
-}
-.div_user p {
+.user_adress h3 {
     font-family: 'Arapey', serif;
+    margin-top: 50px;
+    font-weight: bold;
+}
+.user_adress p {
+    font-family: 'Arapey', serif;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 16px;
 }
-.div_user a {
+.new_adress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.new_adress p {
+    margin-right: 20px;
     color: black;
-    font-family: 'Arapey', serif;
     font-size: 16px;
-    transition: font-size 0.5s ease-in-out;
+    font-family: 'Arapey', serif;
 }
-.div_user a:hover {
-    font-size: calc(16px + 1px);
+.add_new_adress a {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+.add_new_adress i {
+    font-size: 25px;
+    color: black;
+    margin-right: 10px;
+}
+.add_new_adress p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 18px;
     text-decoration: underline;
-    text-decoration-color: rgb(227, 167, 14);
+    text-decoration-color: black;
     text-decoration-thickness: 0.1rem;
     text-underline-offset: 4px;
+}
+.add_new_adress p:hover {
+    text-decoration: none;
 }
 </style>

@@ -13,6 +13,7 @@ import Cart from './components/Cart.vue'
 import Createaccount from './components/Createaccount.vue'
 import DetailProduct from './components/DetailProduct.vue'
 import Login from './components/Login.vue'
+import Adress from './components/Adress.vue'
 
 
 const routes = [
@@ -23,6 +24,7 @@ const routes = [
     {path: '/inscription', component: Createaccount, name: "createaccount" },
     {path: '/details-produit', component: DetailProduct, name: "detailproduct" },
     {path: '/mon-compte', component: Login, name: "login" },
+    {path: '/mon-adresse', component: Adress, name: "adress" },
     
 ]
 
