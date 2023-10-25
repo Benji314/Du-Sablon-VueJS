@@ -77,7 +77,7 @@ export default {
         </div>
         <div class="row row_class_footer">
             <div class="col-md-4 offset-md-4 col_class">
-                <a href=""><img class="logo_top" src="/public/img/DuSablonLogoZoom2.png" alt=""></a>
+                <img class="logo_top" src="/public/img/DuSablonLogoZoom2.png" alt="">
             </div>
         </div>
     </footer>

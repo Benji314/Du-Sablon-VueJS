@@ -47,21 +47,14 @@ export default {
             </div>
 
             <div class="row row_class2">
-                <div class="col-md-12 col_class user_adress">
-                    <h3>Carnet d'adresses</h3>
-                    <p>Sauvegardez toutes vos adresses de livraison pour effectuer plus rapidement vos achats. <br> Si vous
-                        avez une adresse préférée, indiquez-la comme prédéfinie : le champ sera déjà rempli dans votre
-                        Panier.</p>
+                <div class="col-md-12 col_class user_order">
+                    <h3>Mes commandes</h3>
+                    <p>Affichez les détails de votre commande. Si vous souhaitez retourner ou échanger un article, vous
+                        pourrez contacter notre Service Client pour demander un numéro d’autorisation de retour une fois que
+                        votre commande sera livrée.</p>
+                    <p>Vous n'avez pas encore sauvegardé d'adresses de livraison.</p>
+                    <a href="/html/home.html">Continuer votre shopping</a>
 
-                    <div class="new_adress">
-                        <p>Vous n'avez pas encore sauvegardé d'adresses de livraison</p>
-                        <div class="add_new_adress">
-                            <a href="">
-                                <i class="fa-solid fa-plus"></i>
-                                <p>AJOUTER UNE NOUVELLE ADRESSE</p>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -69,48 +62,32 @@ export default {
 </template>
 
 <style scoped>
-.user_adress h3 {
+.user_order {
+    text-align: left;
+}
+
+.user_order h3 {
     font-family: 'Arapey', serif;
     margin-top: 50px;
     font-weight: bold;
 }
-.user_adress p {
+
+.user_order p {
     font-family: 'Arapey', serif;
     margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 16px;
+}
+
+.user_order a {
+    color: black;
+    text-decoration: underline;
+    font-family: 'Arapey', serif;
     margin-bottom: 20px;
     font-size: 16px;
-}
-.new_adress {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.new_adress p {
-    margin-right: 20px;
-    color: black;
-    font-size: 16px;
-    font-family: 'Arapey', serif;
-}
-.add_new_adress a {
-    display: flex;
-    align-items: center;
-    margin-right: 60px;
-}
-.add_new_adress i {
-    font-size: 25px;
-    color: black;
-    margin-right: 10px;
-}
-.add_new_adress p {
-    margin: 0;
     font-weight: bold;
-    font-size: 18px;
-    text-decoration: underline;
-    text-decoration-color: black;
-    text-decoration-thickness: 0.1rem;
-    text-underline-offset: 4px;
 }
-.add_new_adress p:hover {
+
+.user_order a:hover {
     text-decoration: none;
-}
-</style>
+}</style>

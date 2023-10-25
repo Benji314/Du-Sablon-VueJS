@@ -14,17 +14,21 @@ import Createaccount from './components/Createaccount.vue'
 import DetailProduct from './components/DetailProduct.vue'
 import Login from './components/Login.vue'
 import Adress from './components/Adress.vue'
+import Profile from './components/Profile.vue'
+import Myorder from './components/Myorder.vue'
 
 
 const routes = [
     {path: '/accueil', component: Home, name: "home" },
-    {path: '/mon-compte', component: Account, name: "account" },
+    {path: '/connexion-inscription', component: Account, name: "account" },
     {path: '/bracelets', component: Bracelets, name: "bracelets" },
     {path: '/mon-panier', component: Cart, name: "cart" },
     {path: '/inscription', component: Createaccount, name: "createaccount" },
     {path: '/details-produit', component: DetailProduct, name: "detailproduct" },
-    {path: '/mon-compte', component: Login, name: "login" },
-    {path: '/mon-adresse', component: Adress, name: "adress" },
+    {path: '/aperçu', component: Login, name: "login" },
+    {path: '/mes-adresses', component: Adress, name: "adress" },
+    {path: '/mon-profil', component: Profile, name: "profile" },
+    {path: '/mes-commandes', component: Myorder, name: "myorder" },
     
 ]
 

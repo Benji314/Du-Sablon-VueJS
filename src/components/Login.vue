@@ -10,15 +10,29 @@ export default {
             <div class="d-flex flex-column">
                 <nav>
                     <ul class="profil_menu">
-                        <li><a href="/html/login.html">aperçu</a></li>
-                        <li><a href="/html/profile.html">mon profilL</a></li>
-                        <li><a href="/html/myorder.html">mes commandes</a></li>
+                        <li>
+                            <router-link :to="{ name: 'login' }">
+                                aperçu
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{ name: 'profile' }">
+                                mon profil
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{ name: 'myorder' }">
+                                mes commandes
+                            </router-link>
+                        </li>
                         <li>
                             <router-link :to="{ name: 'adress' }">
                                 mes adresses
                             </router-link>
                         </li>
-                        <li><a href="">ma wishlist</a></li>
+                        <li>
+                            <a href="">ma wishlist</a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -37,19 +51,31 @@ export default {
                     <h3>MON PROFIL</h3>
                     <p>M. Benjamin Perreau</p>
                     <p>benjaminperreau1@gmail.com</p>
-                    <p><a href="/html/profile.html">Voir mon profil</a></p>
+                    <p>
+                        <router-link :to="{ name: 'profile' }">
+                            Voir mon profil
+                        </router-link>
+                    </p>
                 </div>
                 <div class="col-md-6 col_class div_user">
                     <h3>MES COMMANDES</h3>
                     <p>Vous n'avez pas encore commandé en tant qu'utilisateur inscrit.</p>
-                    <p><a href="/html/myorder.html">Voir mes commandes</a></p>
+                    <p>
+                        <router-link :to="{ name: 'myorder' }">
+                            Voir mes commandes
+                        </router-link>
+                    </p>
                 </div>
             </div>
             <div class="row row_class2">
                 <div class="col-md-6 col_class div_user">
                     <h3>MES ADRESSES</h3>
                     <p>Vous n'avez aucune adresse sauvegardée.</p>
-                    <p><a href="/html/adress.html">Voir mes adresses</a></p>
+                    <p>
+                        <router-link :to="{ name: 'adress' }">
+                            Voir mes adresses
+                        </router-link>
+                    </p>
                 </div>
                 <div class="col-md-6 col_class div_user">
                     <h3>MA WISHLIST</h3>
@@ -62,67 +88,6 @@ export default {
 </template>
 
 <style scoped>
-.profil_nav h1 {
-    font-family: 'Arapey', serif;
-    margin-bottom: 20px;
-    font-weight: 600;
-    font-size: 30px;
-}
-.profil_menu li {
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-    color: black;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-.profil_menu a {
-    color: black;
-    font-weight: 600;
-    font-size: 20px;
-    transition: font-size 0.5s ease-in-out;
-}
-.profil_menu a:hover {
-    font-size: calc(20px + 3px);
-    text-decoration: underline;
-    text-decoration-color: rgb(227, 167, 14);
-    text-decoration-thickness: 0.2rem;
-    text-underline-offset: 8px;
-}
-.welcome_user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: rgb(236, 236, 236);
-}
-.welcome_user h2 {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    font-family: 'Arapey', serif;
-    font-weight: 600;
-}
-.welcome_user p {
-    font-family: 'Arapey', serif;
-    font-size: 16px;
-    width: 600px;
-}
-#disconnect {
-    min-height: 50px;
-    width: 200px;
-    margin-top: 20px;
-    margin-bottom: 40px;
-    border: 2px solid rgb(227, 167, 14);
-    background-color: rgb(236, 236, 236);
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 20px;
-}
-#disconnect:hover {
-    background-color: rgb(227, 167, 14);
-    color: white;
-}
 .div_user {
     width: calc(50% - 20px);
     margin: 10px;

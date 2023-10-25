@@ -126,6 +126,70 @@ HEADER
     height: 25px;
 }
 /***************************************************
+MON-COMPTE
+***************************************************/
+.profil_nav h1 {
+    font-family: 'Arapey', serif;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 30px;
+}
+.profil_menu li {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.profil_menu a {
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    transition: font-size 0.5s ease-in-out;
+}
+.profil_menu a:hover {
+    font-size: calc(20px + 3px);
+    text-decoration: underline;
+    text-decoration-color: rgb(227, 167, 14);
+    text-decoration-thickness: 0.2rem;
+    text-underline-offset: 8px;
+}
+.welcome_user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(236, 236, 236);
+}
+.welcome_user h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: 'Arapey', serif;
+    font-weight: 600;
+}
+.welcome_user p {
+    font-family: 'Arapey', serif;
+    font-size: 16px;
+    width: 600px;
+}
+#disconnect {
+    min-height: 50px;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    border: 2px solid rgb(227, 167, 14);
+    background-color: rgb(236, 236, 236);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+#disconnect:hover {
+    background-color: rgb(227, 167, 14);
+    color: white;
+}
+/***************************************************
 FOOTER
 ***************************************************/
 hr {
