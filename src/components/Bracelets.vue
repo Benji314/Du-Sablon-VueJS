@@ -2,8 +2,10 @@
 export default {
     data() {
         return {
+            braceletsBeforeFilters: [],
             bracelets: [],
-            sortByPrice: false, 
+            sortByPrice: false,
+            selectedGender: null,
         };
     },
 
@@ -16,7 +18,8 @@ export default {
             fetch('/public/api/bracelets.json')
                 .then((response) => response.json())
                 .then((bracelet_data) => {
-                    this.bracelets = bracelet_data.bracelets;
+                    this.braceletsBeforeFilters = bracelet_data.bracelets;
+                    this.bracelets = this.braceletsBeforeFilters;
                 });
         },
         BraceletsByPrice() {
@@ -28,10 +31,20 @@ export default {
                 this.BraceletData();
             }
         },
+        BraceletsByGender() {
+            if (this.selectedGender === "femme") {
+                this.bracelets = this.braceletsBeforeFilters.filter((bracelet) => bracelet.gender === "Femme");
+            } else if (this.selectedGender === "homme") {
+                this.bracelets = this.braceletsBeforeFilters.filter((bracelet) => bracelet.gender === "Homme");
+            } else {
+                this.bracelets = this.originalBracelets;
+            }
+        },
     },
 
     watch: {
         sortByPrice: 'BraceletsByPrice',
+        selectedGender: 'BraceletsByGender',
     },
 };
 </script>
@@ -41,7 +54,7 @@ export default {
         <div class="container">
             <div class="row row_class">
                 <div class="col-md-2 col_class filters">
-                    <h1>CLASSER PAR</h1>
+                    <h1>TRIER PAR</h1>
                     <div class="d-flex flex-column">
                         <!-- <div class="mb-2">
                             <input type="radio" name="order_by" id="conseilles_option" class="" value="">
@@ -62,11 +75,11 @@ export default {
                     <h1>FILTRER PAR</h1>
                     <div class="d-flex flex-column">
                         <div>
-                            <input type="radio" name="filter_option" id="femme_option" class="" value="">
+                            <input type="radio" name="filter_option" id="femme_option" value="femme" v-model="selectedGender">
                             <label for="femme_option">Femme</label>
                         </div>
                         <div>
-                            <input type="radio" name="filter_option" id="homme_option" class="" value="">
+                            <input type="radio" name="filter_option" id="homme_option" value="homme" v-model="selectedGender">
                             <label for="homme_option">Homme</label>
                         </div>
                     </div>
@@ -93,10 +106,8 @@ export default {
                             <h1>{{ bracelet.name }}</h1>
                             <p>Du Sablon</p>
                             <h2>€ {{ bracelet.unitPrice }}</h2>
-                            <!-- <a :href="'/html/detailproduit.html?id=' + bracelet.id">
-                                <button class="buy_btn">ACHETER</button>
-                            </a> -->
                             <router-link :to="{ name: 'detailproduct' }">
+                                <!-- <router-link :to="{ name: 'detailproduct', params: { id: productId }}"> -->
                                 <button class="buy_btn">ACHETER</button>
                             </router-link>
                         </div>
@@ -132,8 +143,7 @@ export default {
 .filters input[type="radio"]+label {
     position: relative;
     padding-left: 30px;
-    /* Ajustez cet espace pour le carré */
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .filters input[type="radio"]+label::before {
@@ -142,13 +152,9 @@ export default {
     left: 0;
     top: 0;
     width: 15px;
-    /* Ajustez la taille du carré */
     height: 15px;
-    /* Ajustez la taille du carré */
     border: 1px solid rgb(227, 167, 14);
-    /* Style du bord du carré */
     background-color: #fff;
-    /* Couleur de fond du carré */
 }
 
 .filters input[type="radio"]:checked+label::before {

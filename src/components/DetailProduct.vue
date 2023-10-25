@@ -7,6 +7,7 @@ export default {
     },
     mounted() {
         const productId = 1;
+        // const productId = this.$route.params.id;
         this.DetailProductData(productId);
     },
     methods: {
