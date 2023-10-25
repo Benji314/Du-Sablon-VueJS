@@ -3,11 +3,14 @@ export default {
     data() {
         return {
             bracelets: [],
+            sortByPrice: false, 
         };
     },
+
     mounted() {
         this.BraceletData();
     },
+
     methods: {
         BraceletData() {
             fetch('/public/api/bracelets.json')
@@ -16,28 +19,42 @@ export default {
                     this.bracelets = bracelet_data.bracelets;
                 });
         },
+        BraceletsByPrice() {
+            if (this.sortByPrice === 'crescent') {
+                this.bracelets.sort((a, b) => a.unitPrice - b.unitPrice); // Tri croissant
+            } else if (this.sortByPrice === 'descending') {
+                this.bracelets.sort((a, b) => b.unitPrice - a.unitPrice); // Tri décroissant
+            } else {
+                this.BraceletData();
+            }
+        },
+    },
+
+    watch: {
+        sortByPrice: 'BraceletsByPrice',
     },
 };
 </script>
 
 <template>
-
     <main>
         <div class="container">
             <div class="row row_class">
                 <div class="col-md-2 col_class filters">
                     <h1>CLASSER PAR</h1>
                     <div class="d-flex flex-column">
-                        <div class="mb-2">
+                        <!-- <div class="mb-2">
                             <input type="radio" name="order_by" id="conseilles_option" class="" value="">
                             <label for="conseilles_option">Conseillés</label>
-                        </div>
+                        </div> -->
                         <div>
-                            <input type="radio" name="order_by" id="prix_croissant_option" class="" value="">
+                            <input type="radio" name="order_by" id="prix_croissant_option" value="crescent"
+                                v-model="sortByPrice">
                             <label for="prix_croissant_option">Prix croissant</label>
                         </div>
                         <div>
-                            <input type="radio" name="order_by" id="prix_decroissant_option" class="" value="">
+                            <input type="radio" name="order_by" id="prix_decroissant_option" value="descending"
+                                v-model="sortByPrice">
                             <label for="prix_decroissant_option">Prix décroissant</label>
                         </div>
                     </div>
@@ -54,17 +71,20 @@ export default {
                         </div>
                     </div>
                 </div>
-                <div class="row row_class2">
-                    <div class="col-md-2 col_class nb_article">
-                        <p>Nombre articles</p>
+                <div class="col-md-10 col_class">
+                    <div class="row row_class2">
+                        <div class="col-md-2 col_class nb_article">
+                            <p>Nombre d'articles : {{ bracelets.length }}</p>
+                        </div>
+                        <div class="col-md-4 offset-md-2 col_class title_bracelet">
+                            <h1>BRACELETS</h1>
+                        </div>
                     </div>
-                    <div class="col-md-4 offset-md-2 col_class title_bracelet">
-                        <h1>BRACELETS</h1>
+                    <div class="row row_class2 img_bracelet">
+                        <a href=""><img src="/public/img/bracelet_accueil.jpg" alt=""></a>
                     </div>
                 </div>
-                <div class="row row_class2 img_bracelet">
-                    <a href=""><img src="/public/img/bracelet_accueil.jpg" alt=""></a>
-                </div>
+
 
                 <div class="row row_class2">
                     <div v-for="bracelet in bracelets" :key="bracelet.id" class="col-md-3 col_class bracelet_class">
@@ -90,13 +110,9 @@ export default {
 
 
 <style scoped>
-
-
-/***************************************************
-*******************              ******************/
-/****************  BRACELETS  *****************
-*******************              ******************/
-/**************************************************/
+/* .filters{
+    margin-top: 20%;
+} */
 .filters h1 {
     font-family: 'Arapey', serif;
     font-size: 25px;
@@ -111,7 +127,6 @@ export default {
 
 .filters input[type="radio"] {
     display: none;
-    /* Masquez les boutons radio d'origine */
 }
 
 .filters input[type="radio"]+label {
@@ -161,7 +176,6 @@ export default {
 .img_bracelet img {
     width: 100%;
 }
-
 
 .bracelet_class {
     position: relative;

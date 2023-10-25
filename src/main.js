@@ -21,7 +21,7 @@ import Wishlist from './components/Wishlist.vue'
 
 const routes = [
     {path: '/accueil', component: Home, name: "home" },
-    {path: '/connexion-inscription', component: Account, name: "account" },
+    {path: '/connexion', component: Account, name: "account" },
     {path: '/bracelets', component: Bracelets, name: "bracelets" },
     {path: '/mon-panier', component: Cart, name: "cart" },
     {path: '/inscription', component: Createaccount, name: "createaccount" },
