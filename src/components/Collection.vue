@@ -16,7 +16,7 @@ export default {
 
     methods: {
         CollectionData(collectionId) {
-            fetch('/public/api/grainecafe'+ collectionId + '.json')
+            fetch('/public/api/collection'+ collectionId + '.json')
                 .then((response) => response.json())
                 .then((bracelet_data) => {
                     this.braceletsBeforeFilters = bracelet_data.grainecafes;

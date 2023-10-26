@@ -29,12 +29,12 @@ export default {
             <div class="row row_class2">
                 <div v-for="(homeProduct, index) in homeProducts" :key="homeProduct.id" class="col_class"
                     :class="{ 'col-md-10 offset-1': index % 3 === 0, 'col-md-5 offset-1': index % 3 !== 0 }">
-                    <div class="graine-cafe">
-                        <router-link :to="{ name: 'grainecafe', params: { id: homeProduct.id } }">
+                    <div class="collection_div">
+                        <router-link :to="{ name: 'collection', params: { id: homeProduct.id } }">
                             <img :src="homeProduct.path_img" alt="">
+                            <h1>{{ homeProduct.name }}</h1>
+                            <p class="discover">Découvrir la collection</p>
                         </router-link>
-                        <h1>{{ homeProduct.name }}</h1>
-                        <p class="discover">Découvrir la collection</p>
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@ export default {
     text-decoration: underline;
 }
 
-.graine-cafe {
+.collection_div {
     margin-left: auto;
     margin-right: auto;
     max-width: 700px;
@@ -129,7 +129,7 @@ export default {
     text-align: center;
 }
 
-.graine-cafe h1 {
+.collection_div h1 {
     font-weight: 600;
     font-size: 30px;
     margin-bottom: 0px;
@@ -137,144 +137,23 @@ export default {
     font-family: 'Arapey', serif;
     color: #000;
     text-transform: uppercase;
+    transition: font-size 1s ease-in-out;
 }
 
-.graine-cafe p {
+.collection_div p {
     font-size: 15px;
     color: rgb(235, 163, 39);
     margin-top: 0px;
     font-family: 'Arapey', serif;
     font-style: italic;
-}
-
-.graine-cafe h1 {
     transition: font-size 1s ease-in-out;
 }
 
-.graine-cafe a p {
-    transition: font-size 1s ease-in-out;
-}
-
-.graine-cafe:hover a p {
+.collection_div:hover p {
     font-size: calc(15px + 3px);
 }
 
-.graine-cafe:hover h1 {
-    font-size: calc(30px + 3px);
-}
-
-/**************************************************/
-.fete-des-meres {
-    margin-left: auto;
-    margin-right: auto;
-    /* width: 600px;
-    height: auto; */
-    text-align: center;
-}
-
-.fete-des-meres h1 {
-    font-weight: 600;
-    font-size: 30px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-family: 'Arapey', serif;
-}
-
-.fete-des-meres p {
-    font-size: 15px;
-    color: rgb(227, 167, 14);
-    margin-top: 0px;
-    font-family: 'Arapey', serif;
-    font-style: italic;
-}
-
-.fete-des-meres h1 {
-    transition: font-size 1s ease-in-out;
-}
-
-.fete-des-meres a p {
-    transition: font-size 1s ease-in-out;
-}
-
-.fete-des-meres:hover a p {
-    font-size: calc(15px + 3px);
-}
-
-.fete-des-meres:hover h1 {
-    font-size: calc(30px + 3px);
-}
-
-/**************************************************/
-.maille-fine-femme {
-    text-align: center;
-}
-
-.maille-fine-femme h1 {
-    font-weight: 600;
-    font-size: 30px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-family: 'Arapey', serif;
-}
-
-.maille-fine-femme p {
-    font-size: 15px;
-    color: rgb(227, 167, 14);
-    margin-top: 0px;
-    font-family: 'Arapey', serif;
-    font-style: italic;
-}
-
-.maille-fine-femme h1 {
-    transition: font-size 1s ease-in-out;
-}
-
-.maille-fine-femme a p {
-    transition: font-size 1s ease-in-out;
-}
-
-.maille-fine-femme:hover a p {
-    font-size: calc(15px + 3px);
-}
-
-.maille-fine-femme:hover h1 {
-    font-size: calc(30px + 3px);
-}
-
-/**************************************************/
-.cuir-femme {
-    text-align: center;
-}
-
-.cuir-femme h1 {
-    font-weight: 600;
-    font-size: 30px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    font-family: 'Arapey', serif;
-}
-
-.cuir-femme p {
-    font-size: 15px;
-    color: rgb(227, 167, 14);
-    margin-top: 0px;
-    font-family: 'Arapey', serif;
-    font-style: italic;
-}
-
-.cuir-femme h1 {
-    transition: font-size 1s ease-in-out;
-}
-
-.cuir-femme a p {
-    transition: font-size 1s ease-in-out;
-}
-
-.cuir-femme:hover a p {
-    font-size: calc(15px + 3px);
-}
-
-.cuir-femme:hover h1 {
+.collection_div:hover h1 {
     font-size: calc(30px + 3px);
 }
 </style>

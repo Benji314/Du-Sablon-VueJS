@@ -2,16 +2,16 @@
     "homeProducts": [
         {
             "id": 1,
-            "name": "Doré à perles 3 couleurs Or Argent Bronze",
+            "name": "GRAINE DE CAFE",
             "unitPrice": 14.50,
-            "path_img": "/public/img/R1101.001.png",
+            "path_img": "/public/img/R1241.001.png",
             "gender": "Femme"
         },
         {
             "id": 2,
-            "name": "Doré Etoile Crystale 2 perles Doré",
+            "name": "MAILLE FINE FEMME",
             "unitPrice": 12.9,
-            "path_img": "/public/img/R1102.001.png",
+            "path_img": "/public/img/R1128.001.png",
             "gender": "Femme"
         },
         {

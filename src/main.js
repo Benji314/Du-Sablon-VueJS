@@ -17,7 +17,7 @@ import Adress from './components/Adress.vue'
 import Profile from './components/Profile.vue'
 import Myorder from './components/Myorder.vue'
 import Wishlist from './components/Wishlist.vue'
-import GraineCafe from './components/GraineCafe.vue'
+import Collection from './components/Collection.vue'
 
 
 const routes = [
@@ -32,7 +32,7 @@ const routes = [
     {path: '/mon-profil', component: Profile, name: "profile" },
     {path: '/mes-commandes', component: Myorder, name: "myorder" },
     {path: '/ma-wishlist', component: Wishlist, name: "wishlist" },
-    {path: '/collection/:id', component: GraineCafe, name: "grainecafe" },
+    {path: '/collection/:id', component: Collection, name: "collection" },
     
 ]
 
