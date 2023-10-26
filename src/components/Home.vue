@@ -87,9 +87,10 @@ export default {
 </template>
 
 <style scoped>
-.discover:hover{
+.discover:hover {
     text-decoration: underline;
 }
+
 .graine-cafe {
     margin-left: auto;
     margin-right: auto;
@@ -97,6 +98,7 @@ export default {
     height: auto;
     text-align: center;
 }
+
 .graine-cafe h1 {
     font-weight: 600;
     font-size: 30px;
@@ -105,6 +107,7 @@ export default {
     font-family: 'Arapey', serif;
     color: #000;
 }
+
 .graine-cafe p {
     font-size: 15px;
     color: rgb(235, 163, 39);
@@ -112,18 +115,23 @@ export default {
     font-family: 'Arapey', serif;
     font-style: italic;
 }
+
 .graine-cafe h1 {
     transition: font-size 1s ease-in-out;
 }
+
 .graine-cafe a p {
     transition: font-size 1s ease-in-out;
 }
+
 .graine-cafe:hover a p {
     font-size: calc(15px + 3px);
 }
+
 .graine-cafe:hover h1 {
     font-size: calc(30px + 3px);
 }
+
 /**************************************************/
 .fete-des-meres {
     margin-left: auto;
@@ -132,6 +140,7 @@ export default {
     height: auto; */
     text-align: center;
 }
+
 .fete-des-meres h1 {
     font-weight: 600;
     font-size: 30px;
@@ -139,6 +148,7 @@ export default {
     margin-top: 0px;
     font-family: 'Arapey', serif;
 }
+
 .fete-des-meres p {
     font-size: 15px;
     color: rgb(227, 167, 14);
@@ -146,22 +156,28 @@ export default {
     font-family: 'Arapey', serif;
     font-style: italic;
 }
+
 .fete-des-meres h1 {
     transition: font-size 1s ease-in-out;
 }
+
 .fete-des-meres a p {
     transition: font-size 1s ease-in-out;
 }
+
 .fete-des-meres:hover a p {
     font-size: calc(15px + 3px);
 }
+
 .fete-des-meres:hover h1 {
     font-size: calc(30px + 3px);
 }
+
 /**************************************************/
 .maille-fine-femme {
     text-align: center;
 }
+
 .maille-fine-femme h1 {
     font-weight: 600;
     font-size: 30px;
@@ -169,6 +185,7 @@ export default {
     margin-top: 0px;
     font-family: 'Arapey', serif;
 }
+
 .maille-fine-femme p {
     font-size: 15px;
     color: rgb(227, 167, 14);
@@ -176,22 +193,28 @@ export default {
     font-family: 'Arapey', serif;
     font-style: italic;
 }
+
 .maille-fine-femme h1 {
     transition: font-size 1s ease-in-out;
 }
+
 .maille-fine-femme a p {
     transition: font-size 1s ease-in-out;
 }
+
 .maille-fine-femme:hover a p {
     font-size: calc(15px + 3px);
 }
+
 .maille-fine-femme:hover h1 {
     font-size: calc(30px + 3px);
 }
+
 /**************************************************/
 .cuir-femme {
     text-align: center;
 }
+
 .cuir-femme h1 {
     font-weight: 600;
     font-size: 30px;
@@ -199,6 +222,7 @@ export default {
     margin-top: 0px;
     font-family: 'Arapey', serif;
 }
+
 .cuir-femme p {
     font-size: 15px;
     color: rgb(227, 167, 14);
@@ -206,16 +230,19 @@ export default {
     font-family: 'Arapey', serif;
     font-style: italic;
 }
+
 .cuir-femme h1 {
     transition: font-size 1s ease-in-out;
 }
+
 .cuir-femme a p {
     transition: font-size 1s ease-in-out;
 }
+
 .cuir-femme:hover a p {
     font-size: calc(15px + 3px);
 }
+
 .cuir-femme:hover h1 {
     font-size: calc(30px + 3px);
-}
-</style>
+}</style>

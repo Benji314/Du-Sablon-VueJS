@@ -6,21 +6,14 @@ export default {
         };
     },
     mounted() {
-        const productId = 1;
-        // const productId = this.$route.params.id;
-        this.DetailProductData(productId);
+        this.DetailProductData(this.$route.params.id);
     },
     methods: {
         DetailProductData(productId) {
-            fetch('/public/api/products.json')
+            fetch('/public/api/product'+ productId + '.json')
                 .then((response) => response.json())
                 .then((detail_data) => {
-                    const product = detail_data.products.find((product) => product.id === productId);
-                    if (product) {
-                        this.product = product;
-                    } else {
-                        console.error("Erreur de chargement");
-                    }
+                    this.product = detail_data;
                 })
         },
     },

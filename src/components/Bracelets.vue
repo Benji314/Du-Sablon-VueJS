@@ -106,8 +106,7 @@ export default {
                             <h1>{{ bracelet.name }}</h1>
                             <p>Du Sablon</p>
                             <h2>€ {{ bracelet.unitPrice }}</h2>
-                            <router-link :to="{ name: 'detailproduct' }">
-                                <!-- <router-link :to="{ name: 'detailproduct', params: { id: productId }}"> -->
+                            <router-link :to="{ name: 'detailproduct', params: { id: bracelet.id }}">
                                 <button class="buy_btn">ACHETER</button>
                             </router-link>
                         </div>
