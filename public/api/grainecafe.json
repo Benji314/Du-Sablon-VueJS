@@ -1,0 +1,27 @@
+{
+    "grainecafes": [
+        {
+            "id": 5,
+            "name": "Graine de café argenté",
+            "unitPrice": 14.50,
+            "path_img": "/public/img/R1241.001.png",
+            "gender": "Homme"
+        },
+        {
+            "id": 2,
+            "name": "Graine de café noire",
+            "unitPrice": 15.5,
+            "path_img": "/public/img/R1231.001.png",
+            "gender": "Homme"
+        },
+        {
+            "id": 3,
+            "name": "Graine de café doré",
+            "unitPrice": 15.5,
+            "path_img": "/public/img/R1232.001.png",
+            "gender": "Homme"
+        }
+    ],
+    "shipping_id": 1,
+    "user": null
+}

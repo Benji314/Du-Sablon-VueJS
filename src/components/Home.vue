@@ -9,20 +9,18 @@ export default {
             <div class="row row_class">
                 <div class="col-10 offset-1 col-md-8 offset-md-2 col_class">
                     <div class="graine-cafe">
-                        <router-link :to="{ name: 'detailproduct' }">
+                        <router-link :to="{ name: 'grainecafe' }">
                             <img src="/img/R1241.001.png" alt="">
-                        </router-link>
-                        <h1>GRAINE DE CAFE</h1>
-                        <a href="">
+                            <h1>GRAINE DE CAFE</h1>
                             <p class="discover">Découvrir la collection</p>
-                        </a>
+                        </router-link>
                     </div>
                 </div>
             </div>
             <div class="row row_class">
                 <div class="col-12 col-md-10 offset-md-1 col_class">
                     <div class="fete-des-meres">
-                        <a href=""><img src="/img/R1147.003-copie.jpg" alt=""></a>
+                        <a href=""><img src="/public/img/R1147.003.jpg" alt=""></a>
                         <h1>FETE DES MERES</h1>
                         <a href="">
                             <p class="discover">Découvrir</p>
