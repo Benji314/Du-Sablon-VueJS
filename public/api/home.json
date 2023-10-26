@@ -1,5 +1,5 @@
 {
-    "bracelets": [
+    "homeProducts": [
         {
             "id": 1,
             "name": "Doré à perles 3 couleurs Or Argent Bronze",
@@ -41,34 +41,6 @@
             "unitPrice": 11.90,
             "path_img": "/public/img/R1128.001.png",
             "gender": "Femme"
-        },
-        {
-            "id": 7,
-            "name": "Doré Croix Cuir Blanc",
-            "unitPrice": 12.90,
-            "path_img": "/public/img/R1110.001.png",
-            "gender": "Femme"
-        },
-        {
-            "id": 8,
-            "name": "Cuir Tréssé Noir 3 Pierres Naturelles",
-            "unitPrice": 18.50,
-            "path_img": "/public/img/R1209.001.png",
-            "gender": "Homme"
-        },
-        {
-            "id": 10,
-            "name": "Graine de café noire",
-            "unitPrice": 15.5,
-            "path_img": "/public/img/R1231.001.png",
-            "gender": "Homme"
-        },
-        {
-            "id": 11,
-            "name": "Graine de café doré",
-            "unitPrice": 15.5,
-            "path_img": "/public/img/R1232.001.png",
-            "gender": "Homme"
         }
     ],
     "shipping_id": 1,

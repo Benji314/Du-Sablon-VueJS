@@ -10,28 +10,29 @@ export default {
     },
 
     mounted() {
-        this.BraceletData();
+        const collectionId = this.$route.params.id;
+        this.CollectionData(collectionId);
     },
 
     methods: {
-        BraceletData() {
-            fetch('/public/api/grainecafe.json')
+        CollectionData(collectionId) {
+            fetch('/public/api/grainecafe'+ collectionId + '.json')
                 .then((response) => response.json())
                 .then((bracelet_data) => {
                     this.braceletsBeforeFilters = bracelet_data.grainecafes;
                     this.grainecafes = this.braceletsBeforeFilters;
                 });
         },
-        BraceletsByPrice() {
+        CollectionByPrice() {
             if (this.sortByPrice === 'crescent') {
                 this.grainecafes.sort((a, b) => a.unitPrice - b.unitPrice); // Tri croissant
             } else if (this.sortByPrice === 'descending') {
                 this.grainecafes.sort((a, b) => b.unitPrice - a.unitPrice); // Tri décroissant
             } else {
-                this.BraceletData();
+                this.CollectionData();
             }
         },
-        BraceletsByGender() {
+        CollectionByGender() {
             if (this.selectedGender === "femme") {
                 this.grainecafes = this.braceletsBeforeFilters.filter((grainecafe) => grainecafe.gender === "Femme");
             } else if (this.selectedGender === "homme") {
@@ -43,8 +44,8 @@ export default {
     },
 
     watch: {
-        sortByPrice: 'BraceletsByPrice',
-        selectedGender: 'BraceletsByGender',
+        sortByPrice: 'CollectionByPrice',
+        selectedGender: 'CollectionByGender',
     },
 };
 </script>
@@ -56,10 +57,6 @@ export default {
                 <div class="col-md-2 col_class filters">
                     <h1>TRIER PAR</h1>
                     <div class="d-flex flex-column">
-                        <!-- <div class="mb-2">
-                            <input type="radio" name="order_by" id="conseilles_option" class="" value="">
-                            <label for="conseilles_option">Conseillés</label>
-                        </div> -->
                         <div>
                             <input type="radio" name="order_by" id="prix_croissant_option" value="crescent"
                                 v-model="sortByPrice">
@@ -98,11 +95,12 @@ export default {
                     </div> -->
                 </div>
 
-
                 <div class="row row_class2">
                     <div v-for="grainecafe in grainecafes" :key="grainecafe.id" class="col-md-4 col_class bracelet_class">
                         <div class="bracelets">
-                            <a href=""><img :src="grainecafe.path_img" alt=""></a>
+                            <router-link :to="{ name: 'detailproduct', params: { id: grainecafe.id }}">
+                                <img :src="grainecafe.path_img" alt="">
+                            </router-link>
                             <h1>{{ grainecafe.name }}</h1>
                             <p>Du Sablon</p>
                             <h2>€ {{ grainecafe.unitPrice }}</h2>
@@ -117,7 +115,6 @@ export default {
         </div>
     </main>
 </template>
-
 
 <style scoped>
 /* .filters{

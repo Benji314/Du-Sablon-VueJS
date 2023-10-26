@@ -1,12 +1,44 @@
 <script>
 export default {
+    data() {
+        return {
+            homeProducts: [],
+        };
+    },
+
+    mounted() {
+        this.HomeProductData();
+    },
+
+    methods: {
+        HomeProductData() {
+            fetch('/public/api/home.json')
+                .then((response) => response.json())
+                .then((home_data) => {
+                    this.homeProducts = home_data.homeProducts;
+                });
+        },
+    },
 };
 </script>
 
 <template>
     <main>
         <div class="container-md the_base">
-            <div class="row row_class">
+
+            <div class="row row_class2">
+                <div v-for="(homeProduct, index) in homeProducts" :key="homeProduct.id" class="col_class"
+                    :class="{ 'col-md-10 offset-1': index % 3 === 0, 'col-md-5 offset-1': index % 3 !== 0 }">
+                    <div class="graine-cafe">
+                        <router-link :to="{ name: 'grainecafe', params: { id: homeProduct.id } }">
+                            <img :src="homeProduct.path_img" alt="">
+                        </router-link>
+                        <h1>{{ homeProduct.name }}</h1>
+                        <p class="discover">Découvrir la collection</p>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row row_class">
                 <div class="col-10 offset-1 col-md-8 offset-md-2 col_class">
                     <div class="graine-cafe">
                         <router-link :to="{ name: 'grainecafe' }">
@@ -16,8 +48,8 @@ export default {
                         </router-link>
                     </div>
                 </div>
-            </div>
-            <div class="row row_class">
+            </div> -->
+            <!-- <div class="row row_class">
                 <div class="col-12 col-md-10 offset-md-1 col_class">
                     <div class="fete-des-meres">
                         <a href=""><img src="/public/img/R1147.003.jpg" alt=""></a>
@@ -79,7 +111,7 @@ export default {
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
 </template>
@@ -104,6 +136,7 @@ export default {
     margin-top: 0px;
     font-family: 'Arapey', serif;
     color: #000;
+    text-transform: uppercase;
 }
 
 .graine-cafe p {
@@ -243,4 +276,5 @@ export default {
 
 .cuir-femme:hover h1 {
     font-size: calc(30px + 3px);
-}</style>
+}
+</style>

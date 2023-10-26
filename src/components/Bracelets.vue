@@ -100,9 +100,11 @@ export default {
 
 
                 <div class="row row_class2">
-                    <div v-for="bracelet in bracelets" :key="bracelet.id" class="col-md-3 col_class bracelet_class">
+                    <div v-for="bracelet in bracelets" :key="bracelet.id" class="col-md-4 col_class bracelet_class">
                         <div class="bracelets">
-                            <a href=""><img :src="bracelet.path_img" alt=""></a>
+                            <router-link :to="{ name: 'detailproduct', params: { id: bracelet.id }}">
+                                <img :src="bracelet.path_img" alt="">
+                            </router-link>
                             <h1>{{ bracelet.name }}</h1>
                             <p>Du Sablon</p>
                             <h2>€ {{ bracelet.unitPrice }}</h2>

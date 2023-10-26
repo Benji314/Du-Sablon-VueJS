@@ -1,0 +1,20 @@
+{
+    "grainecafes": [
+        {
+            "id": 6,
+            "name": "Bracelet Fin Argenté Ananas Brillant",
+            "unitPrice": 11.9,
+            "path_img": "/public/img/R1128.001.png",
+            "gender": "Femme"
+        },
+        {
+            "id": 2,
+            "name": "Doré Etoile Crystale 2 perles Doré",
+            "unitPrice": 12.9,
+            "path_img": "/public/img/R1102.001.png",
+            "gender": "Femme"
+        }
+    ],
+    "shipping_id": 1,
+    "user": null
+}

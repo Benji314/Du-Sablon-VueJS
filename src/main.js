@@ -32,7 +32,7 @@ const routes = [
     {path: '/mon-profil', component: Profile, name: "profile" },
     {path: '/mes-commandes', component: Myorder, name: "myorder" },
     {path: '/ma-wishlist', component: Wishlist, name: "wishlist" },
-    {path: '/graine-de-café', component: GraineCafe, name: "grainecafe" },
+    {path: '/collection/:id', component: GraineCafe, name: "grainecafe" },
     
 ]
 

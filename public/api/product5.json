@@ -7,5 +7,24 @@
     "path_img2": "/public/img/R1241.003.jpg",
     "path_img3": "/public/img/R1241.004.jpg",
     "path_img4": "/public/img/R1241.005.png",
-    "ref": "R1241"
+    "ref": "R1241",
+    "associateProducts": {
+        "product_img1": "",
+        "product_name1": "",
+
+        "product_img2": "",
+        "product_name2": "",
+
+        "product_img3": "",
+        "product_name3": "",
+
+        "product_img4": "",
+        "product_name4": "",
+
+        "product_img5": "",
+        "product_name5": "",
+
+        "product_img6": "",
+        "product_name6": ""
+    }
 }
