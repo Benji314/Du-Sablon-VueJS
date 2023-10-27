@@ -3,7 +3,7 @@ export default {
     data() {
         return {
             braceletsBeforeFilters: [],
-            grainecafes: [],
+            collections: [],
             sortByPrice: false,
             selectedGender: null,
         };
@@ -19,26 +19,26 @@ export default {
             fetch('/public/api/collection'+ collectionId + '.json')
                 .then((response) => response.json())
                 .then((bracelet_data) => {
-                    this.braceletsBeforeFilters = bracelet_data.grainecafes;
-                    this.grainecafes = this.braceletsBeforeFilters;
+                    this.braceletsBeforeFilters = bracelet_data.collections;
+                    this.collections = this.braceletsBeforeFilters;
                 });
         },
         CollectionByPrice() {
             if (this.sortByPrice === 'crescent') {
-                this.grainecafes.sort((a, b) => a.unitPrice - b.unitPrice); // Tri croissant
+                this.collections.sort((a, b) => a.unitPrice - b.unitPrice); // Tri croissant
             } else if (this.sortByPrice === 'descending') {
-                this.grainecafes.sort((a, b) => b.unitPrice - a.unitPrice); // Tri décroissant
+                this.collections.sort((a, b) => b.unitPrice - a.unitPrice); // Tri décroissant
             } else {
                 this.CollectionData();
             }
         },
         CollectionByGender() {
             if (this.selectedGender === "femme") {
-                this.grainecafes = this.braceletsBeforeFilters.filter((grainecafe) => grainecafe.gender === "Femme");
+                this.collections = this.braceletsBeforeFilters.filter((collection) => collection.gender === "Femme");
             } else if (this.selectedGender === "homme") {
-                this.grainecafes = this.braceletsBeforeFilters.filter((grainecafe) => grainecafe.gender === "Homme");
+                this.collections = this.braceletsBeforeFilters.filter((collection) => collection.gender === "Homme");
             } else {
-                this.grainecafes = this.originalBracelets;
+                this.collections = this.originalBracelets;
             }
         },
     },
@@ -84,7 +84,7 @@ export default {
                 <div class="col-md-10 col_class">
                     <div class="row row_class2">
                         <div class="col-md-2 col_class nb_article">
-                            <p>Nombre d'articles : {{ grainecafes.length }}</p>
+                            <p>Nombre d'articles : {{ collections.length }}</p>
                         </div>
                         <div class="col-md-5 offset-md-1 col_class title_bracelet">
                             <h1>Graine de Café</h1>
@@ -96,15 +96,15 @@ export default {
                 </div>
 
                 <div class="row row_class2">
-                    <div v-for="grainecafe in grainecafes" :key="grainecafe.id" class="col-md-4 col_class bracelet_class">
+                    <div v-for="collection in collections" :key="collection.id" class="col-md-4 col_class bracelet_class">
                         <div class="bracelets">
-                            <router-link :to="{ name: 'detailproduct', params: { id: grainecafe.id }}">
-                                <img :src="grainecafe.path_img" alt="">
+                            <router-link :to="{ name: 'detailproduct', params: { id: collection.id }}">
+                                <img :src="collection.path_img" alt="">
                             </router-link>
-                            <h1>{{ grainecafe.name }}</h1>
+                            <h1>{{ collection.name }}</h1>
                             <p>Du Sablon</p>
-                            <h2>€ {{ grainecafe.unitPrice }}</h2>
-                            <router-link :to="{ name: 'detailproduct', params: { id: grainecafe.id }}">
+                            <h2>€ {{ collection.unitPrice }}</h2>
+                            <router-link :to="{ name: 'detailproduct', params: { id: collection.id }}">
                                 <button class="buy_btn">ACHETER</button>
                             </router-link>
                         </div>

@@ -2,7 +2,7 @@ import './assets/main.css'
 
 // Import de nos librairies
 import { createApp } from 'vue'
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 // Import de nos components
 import App from './App.vue'
@@ -37,8 +37,18 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes,
+    scrollBehavior(to, from, savedPosition) {
+        if (to.hash) {
+          return {
+            el: to.hash,
+            behavior: 'smooth', // Pour un défilement en douceur, si pris en charge
+          };
+        } else {
+          return { top: 0, behavior: 'smooth' }; // Défilement vers le haut
+        }
+      },
 })
 
 

@@ -1,11 +1,25 @@
-{   
-    "id": 10,
+{
+    "id": 11,
     "name": "Graine de café doré",
-    "description": "Couleur du métal: Or, Métal: Acier Inoxydable, Condition: 100% nouveau, Emballage: Sachet en organza, Fermoir: Fermoir mousqueton, Maille: Maille forçat, Couleur: Or, Traitement de surface: Poli et satiné, Taille: 18.5 cm longueur / 1.6 cm largeur / 0.2 cm épaisseur, Poids: 6 grammes, Redimensionnable: Non.",
+    "description": "Couleur du métal: Or, Métal: Acier Inoxydable, Condition: 100% nouveau, Emballage: Sachet en organza, Fermoir: Fermoir mousqueton, Maille : Maille graine de café, Couleur: Or, Traitement de surface: Poli et satiné, Taille: 22 cm longueur / 0.7 cm largeur / 0.4 cm épaisseur, Poids: 18 grammes, Redimensionnable: Non.",
     "unitPrice": 15.5,
     "path_img1": "/public/img/R1232.001.png",
-    "path_img2": null,
-    "path_img3": null,
-    "path_img4": null,
-    "ref": "R1232"
+    "path_img2": "/public/img/R1232.002.jpg",
+    "path_img3": "/public/img/R1232.003.jpg",
+    "path_img4": "/public/img/R1232.004.jpg",
+    "ref": "R1232",
+    "associateProducts": [
+        {
+            "id": 10,
+            "product_img": "/img/R1231.001.png",
+            "product_name": "GRAINE DE CAFE NOIRE",
+            "product_price": 15.5
+        },
+        {
+            "id": 5,
+            "product_img": "/public/img/R1241.001.png",
+            "product_name": "GRAINE DE CAFE",
+            "product_price": 14.5
+        }
+    ]
 }
