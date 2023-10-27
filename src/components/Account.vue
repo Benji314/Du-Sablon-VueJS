@@ -50,9 +50,7 @@ export default {
                             veuillez consulter notre
                             <a href="">Politique de Confidentialité.</a>
                         </p>
-                        <!-- <router-link :to="{ name: 'login' }"> -->
                         <button type="submit" id="connexion">connexion</button>
-                        <!-- </router-link> -->
                     </form>
                 </div>
             </div>
@@ -68,8 +66,7 @@ export default {
                     <li>Gérer votre collection et vos services commandés</li>
                 </ul>
                 <router-link :to="{ name: 'createaccount' }">
-                    <button type="submit" id="create_account_btn">créer mon
-                        compte</button>
+                    <button type="submit" id="create_account_btn">créer mon compte</button>
                 </router-link>
             </div>
         </div>
@@ -84,7 +81,6 @@ export default {
 
 .register {
     padding: 50px 50px;
-    /* border-right: 1px solid grey; */
     width: auto;
 }
 

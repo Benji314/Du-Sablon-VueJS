@@ -10,7 +10,7 @@ export default {
     },
     methods: {
         DetailProductData(productId) {
-            fetch('/public/api/product' + productId + '.json')
+            fetch('/public/api/products/product' + productId + '.json')
                 .then((response) => response.json())
                 .then((detail_data) => {
                     this.product = detail_data;

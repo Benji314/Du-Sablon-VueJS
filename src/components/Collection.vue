@@ -3,7 +3,7 @@ export default {
     data() {
         return {
             braceletsBeforeFilters: [],
-            collections: [],
+            collection: [],
             sortByPrice: false,
             selectedGender: null,
         };
@@ -16,29 +16,29 @@ export default {
 
     methods: {
         CollectionData(collectionId) {
-            fetch('/public/api/collection'+ collectionId + '.json')
+            fetch('/public/api/collections/collection'+ collectionId + '.json')
                 .then((response) => response.json())
                 .then((bracelet_data) => {
-                    this.braceletsBeforeFilters = bracelet_data.collections;
-                    this.collections = this.braceletsBeforeFilters;
+                    this.braceletsBeforeFilters = bracelet_data.collection;
+                    this.collection = this.braceletsBeforeFilters;
                 });
         },
         CollectionByPrice() {
             if (this.sortByPrice === 'crescent') {
-                this.collections.sort((a, b) => a.unitPrice - b.unitPrice); // Tri croissant
+                this.collection.sort((a, b) => a.unitPrice - b.unitPrice); // Tri croissant
             } else if (this.sortByPrice === 'descending') {
-                this.collections.sort((a, b) => b.unitPrice - a.unitPrice); // Tri décroissant
+                this.collection.sort((a, b) => b.unitPrice - a.unitPrice); // Tri décroissant
             } else {
                 this.CollectionData();
             }
         },
         CollectionByGender() {
             if (this.selectedGender === "femme") {
-                this.collections = this.braceletsBeforeFilters.filter((collection) => collection.gender === "Femme");
+                this.collection = this.braceletsBeforeFilters.filter((product) => product.gender === "Femme");
             } else if (this.selectedGender === "homme") {
-                this.collections = this.braceletsBeforeFilters.filter((collection) => collection.gender === "Homme");
+                this.collection = this.braceletsBeforeFilters.filter((product) => product.gender === "Homme");
             } else {
-                this.collections = this.originalBracelets;
+                this.collection = this.originalBracelets;
             }
         },
     },
@@ -84,7 +84,7 @@ export default {
                 <div class="col-md-10 col_class">
                     <div class="row row_class2">
                         <div class="col-md-2 col_class nb_article">
-                            <p>Nombre d'articles : {{ collections.length }}</p>
+                            <p>Nombre d'articles : {{ collection.length }}</p>
                         </div>
                         <div class="col-md-5 offset-md-1 col_class title_bracelet">
                             <h1>Graine de Café</h1>
@@ -96,15 +96,15 @@ export default {
                 </div>
 
                 <div class="row row_class2">
-                    <div v-for="collection in collections" :key="collection.id" class="col-md-4 col_class bracelet_class">
+                    <div v-for="product in collection" :key="product.id" class="col-md-4 col_class bracelet_class">
                         <div class="bracelets">
-                            <router-link :to="{ name: 'detailproduct', params: { id: collection.id }}">
-                                <img :src="collection.path_img" alt="">
+                            <router-link :to="{ name: 'detailproduct', params: { id: product.id }}">
+                                <img :src="product.path_img" alt="">
                             </router-link>
-                            <h1>{{ collection.name }}</h1>
+                            <h1>{{ product.name }}</h1>
                             <p>Du Sablon</p>
-                            <h2>€ {{ collection.unitPrice }}</h2>
-                            <router-link :to="{ name: 'detailproduct', params: { id: collection.id }}">
+                            <h2>€ {{ product.unitPrice }}</h2>
+                            <router-link :to="{ name: 'detailproduct', params: { id: product.id }}">
                                 <button class="buy_btn">ACHETER</button>
                             </router-link>
                         </div>

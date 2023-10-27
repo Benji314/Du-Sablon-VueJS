@@ -46,7 +46,7 @@ const router = createRouter({
             behavior: 'smooth', // Pour un défilement en douceur, si pris en charge
           };
         } else {
-          return { top: 0, behavior: 'smooth' }; // Défilement vers le haut
+          return { top: 300, behavior: 'smooth' }; // Défilement vers le haut
         }
       },
 })
