@@ -10,13 +10,19 @@ export default {
     },
     methods: {
         DetailProductData(productId) {
-            fetch('/public/api/product'+ productId + '.json')
+            fetch('/public/api/product' + productId + '.json')
                 .then((response) => response.json())
                 .then((detail_data) => {
                     this.product = detail_data;
                 })
         },
     },
+
+    watch: {
+        '$route.params.id': function () {
+            this.DetailProductData(this.$route.params.id);
+        }
+    }
 };
 </script>
 
@@ -26,7 +32,7 @@ export default {
         <div class="row row_class">
             <div class="col-6 col_class">
                 <div class="first_img_product">
-                    <a href=""><img :src="product.path_img1" alt=""></a>
+                    <img :src="product.path_img1" alt="">
                 </div>
             </div>
             <div class="col-5 offset-1 col_class description_product">
@@ -46,44 +52,31 @@ export default {
         </div>
         <div class="row row_class">
             <div class="col-md-3 col_class img_product">
-                <a href=""><img :src="product.path_img2" alt=""></a>
+                <img :src="product.path_img2" alt="">
             </div>
             <div class="col-md-3 col_class img_product">
-                <a href=""><img :src="product.path_img3" alt=""></a>
+                <img :src="product.path_img3" alt="">
             </div>
         </div>
         <div class="row row_class">
             <div class="col-md-6 col_class img_product">
-                <a href=""><img :src="product.path_img4" alt=""></a>
+                <img :src="product.path_img4" alt="">
             </div>
         </div>
 
         <div class="row row_class associate_creation">
             <h1>CREATIONS ASSIOCIEES</h1>
             <p>Découvrez les autres création uniques </p>
-            <div class="col-md-4 col_class">
+            <div class="col-md-4 col_class" v-for="associateProduct in product.associateProducts"
+                :key="associateProduct.id">
                 <div class="others_img_div">
-                    <a href="/html/detailproduit.html"><img src="/img/R1231.001.png" alt=""></a>
+                    <img :src="associateProduct.product_img" alt="">
                 </div>
-                <h2>GRAINE DE CAFE NOIRE</h2>
-                <h3>€ 14,5</h3>
-                <a href="/html/detailproduit.html"><button class="associate_crea_btn">ACHETER</button></a>
-            </div>
-            <div class="col-md-4 col_class">
-                <div class="others_img_div">
-                    <a href="/html/detailproduit.html"><img src="/img/R1232.001.png" alt=""></a>
-                </div>
-                <h2>GRAINE DE CAFE OR</h2>
-                <h3>€ 14,5</h3>
-                <a href="/html/detailproduit.html"><button class="associate_crea_btn">ACHETER</button></a>
-            </div>
-            <div class="col-md-4 col_class">
-                <div class="others_img_div">
-                    <a href="/html/detailproduit.html"><img src="/img/R1229.001.png" alt=""></a>
-                </div>
-                <h2>BRACELET OR</h2>
-                <h3>€ 14,5</h3>
-                <a href="/html/detailproduit.html"><button class="associate_crea_btn">ACHETER</button></a>
+                <h2>{{ associateProduct.product_name }}</h2>
+                <h3>{{ associateProduct.product_price }}</h3>
+                <router-link :to="{ name: 'detailproduct', params: { id: associateProduct.id } }">
+                    <button class="associate_crea_btn">ACHETER</button>
+                </router-link>
             </div>
         </div>
         <div class="row row_class grey_divs">
@@ -101,7 +94,7 @@ export default {
                 </div>
             </div>
         </div>
-        <div class="row row_class associate_creation">
+        <!-- <div class="row row_class associate_creation">
             <h1>Vous aimerez aussi</h1>
             <div class="col-md-4 col_class">
                 <div class="others_img_div">
@@ -127,7 +120,7 @@ export default {
                 <h3>€ 14,5</h3>
                 <a href="/html/detailproduit.html"><button class="associate_crea_btn">ACHETER</button></a>
             </div>
-        </div>
+        </div> -->
         <div class="row row_class three_arguments">
             <div class="col-md-3 offset-md-1 col_class arguments_div">
                 <i class="fa-solid fa-truck-fast"></i>
@@ -149,31 +142,38 @@ export default {
 .first_img_product img {
     max-width: 100%;
 }
+
 .img_product img {
     max-width: 100%;
 }
+
 .description_product h1 {
     font-family: 'Arapey', serif;
     font-weight: bold;
 }
+
 .description_product p {
     font-family: 'Arapey', serif;
     font-weight: 400;
     font-size: 17px;
 }
+
 .description_product h2 {
     font-family: 'Arapey', serif;
     font-weight: 700;
     margin-bottom: 20px;
 }
+
 .incl_tva {
     font-size: 17px;
     font-weight: lighter;
 }
+
 .add_cart_div {
     text-align: center;
     align-items: center;
 }
+
 .add_cart_button {
     background-color: #000;
     color: white;
@@ -184,12 +184,14 @@ export default {
     margin-bottom: 20px;
     border-radius: 20px;
 }
+
 .add_cart_button:hover {
     transform: scale(1.05);
     background-color: white;
     color: #000;
     font-weight: bold;
 }
+
 .share_div {
     display: flex;
     align-items: center;
@@ -197,52 +199,64 @@ export default {
     justify-content: space-between;
     width: 40%;
 }
+
 .share_div i {
     font-size: 20px;
     color: rgb(227, 167, 14);
 }
+
 .share_div h3 {
     font-size: 17px;
     margin: 0;
     font-family: 'Arapey', serif;
 }
+
 .share_div p {
     margin: 0;
     font-size: 12px;
 }
+
 .vertical-line2 {
     border: 1px solid #000;
     display: inline-block;
     height: 20px;
 }
+
 .share_div i:hover {
     color: black;
 }
+
 /***************************************************/
 .associate_creation {
     text-align: center;
 }
+
 .others_img_div {
     /* border: 1px solid #000; */
     min-height: 320px;
 }
+
 .associate_creation h1 {
     font-family: 'Arapey', serif;
     font-size: 35px;
 }
+
 .associate_creation p {
     font-family: 'Arapey', serif;
     font-size: 18px;
 }
+
 .associate_creation h2 {
     font-family: 'Arapey', serif;
     font-size: 30px;
 }
+
 .associate_creation h3 {
     font-family: 'Arapey', serif;
     font-size: 27px;
     font-weight: bold;
 }
+
 .associate_crea_btn {
     background-color: #000;
     color: white;
@@ -253,32 +267,38 @@ export default {
     margin-bottom: 10px;
     border-radius: 15px;
 }
+
 .associate_crea_btn:hover {
     transform: scale(1.05);
     background-color: white;
     color: #000;
     font-weight: bold;
 }
+
 /***************************************************/
 .grey_divs {
     margin-top: 120px;
     margin-bottom: 80px;
 }
+
 .delivery_gift_div {
     min-height: 300px;
     background-color: rgb(236, 236, 236);
     display: flex;
     justify-content: center;
 }
+
 .dlvry_gift_content {
     width: 60%;
 }
+
 .delivery_gift_div h1 {
     font-family: 'Arapey', serif;
     font-size: 30px;
     font-weight: bold;
     margin-top: 25%;
 }
+
 /***************************************************/
 .three_arguments {
     display: flex;
@@ -286,18 +306,20 @@ export default {
     margin-top: 200px;
     margin-bottom: 200px;
 }
+
 .arguments_div {
     text-align: center;
     flex-direction: column;
 }
+
 .arguments_div i {
     display: block;
     margin: 40px auto;
     font-size: 40px;
 }
+
 .arguments_div h1 {
     font-family: 'Arapey', serif;
     font-size: 35px;
     font-weight: bold;
-}
-</style>
+}</style>
