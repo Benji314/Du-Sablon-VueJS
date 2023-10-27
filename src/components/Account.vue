@@ -11,7 +11,17 @@ export default {
             event.preventDefault();
             console.log("Adresse email:", this.email);
             console.log("Mot de passe:", this.password);
-            // this.$router.push('/components/Login.vue');
+
+            const isAuthenticated = this.checkAuthentication();
+
+            if (isAuthenticated) {
+                this.$router.push({ name: 'login' });
+            } else {
+                console.log("L'utilisateur n'est pas authentifié.");
+            }
+        },
+        checkAuthentication() {
+            return true;
         },
     },
 };
@@ -36,12 +46,13 @@ export default {
                         <a href="" id="forgot_password">
                             <p>Vous avez oublié votre mot de passe ?</p>
                         </a>
-                        <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à   caractère personnel, veuillez consulter notre 
+                        <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à caractère personnel,
+                            veuillez consulter notre
                             <a href="">Politique de Confidentialité.</a>
                         </p>
-                        <router-link :to="{ name: 'login' }">
-                            <button type="submit" id="connexion">connexion</button>
-                        </router-link>
+                        <!-- <router-link :to="{ name: 'login' }"> -->
+                        <button type="submit" id="connexion">connexion</button>
+                        <!-- </router-link> -->
                     </form>
                 </div>
             </div>
@@ -58,7 +69,7 @@ export default {
                 </ul>
                 <router-link :to="{ name: 'createaccount' }">
                     <button type="submit" id="create_account_btn">créer mon
-                    compte</button>
+                        compte</button>
                 </router-link>
             </div>
         </div>

@@ -43,9 +43,10 @@ export default {
         <div class="col-md-8 col_class">
             <div class="row row_class2 welcome_user">
                 <h2>BIENVENUE USER</h2>
-                <p>À partir de votre compte Du Sablon, vous pouvez gérer et garder la trace de votre expérience d’achat
-                    personnalisée sur la boutique en ligne Du Sablon.</p>
-                <button id="disconnect">déconnexion</button>
+                <p>À partir de votre compte Du Sablon, vous pouvez gérer et garder la trace de votre expérience d’achat personnalisée sur la boutique en ligne Du Sablon.</p>
+                <router-link :to="{ name: 'account' }">
+                    <button id="disconnect">déconnexion</button>
+                </router-link>
             </div>
 
             <div class="row">

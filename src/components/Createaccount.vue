@@ -138,9 +138,10 @@ export default {
                                 </select>
                             </div>
                         </div>
-                        <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à caractère personnel,
-                            veuillez consulter notre <a href="">Politique de Confidentialité.</a></p>
-                        <button type="submit" id="create_account_btn">créer mon compte</button>
+                        <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à caractère personnel, veuillez consulter notre <a href="">Politique de Confidentialité.</a></p>
+                        <router-link :to="{ name: 'login' }">
+                            <button type="submit" id="create_account_btn">créer mon compte</button>
+                        </router-link>
                     </form>
                 </div>
             </div>
@@ -179,15 +180,6 @@ export default {
     font-size: 15px;
     font-family: 'Arapey', serif;
 }
-/* .email_div input {
-    border: 0;
-    border-bottom: 1px solid #000;
-    font-family: 'Arapey', serif;
-    font-size: 18px;
-    margin-bottom: 20px;
-    width: 400px;
-    background-color: #ddd;
-} */
 .create_account_form #forgot_password {
     color: black;
     text-decoration: none;
