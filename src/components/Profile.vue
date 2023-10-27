@@ -240,10 +240,9 @@ export default {
                         </form>
                     </div>
                 </div>
-
             </div>
             <div class="row row_class2">
-                <div class="col-md-7 offset-md-3 col_class user_profil_foot">
+                <div class="col-md-6 col_class user_profil_foot">
                     <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à caractère personnel, veuillez consulter notre 
                         <a href="">Politique de Confidentialité</a>.
                     </p>
@@ -344,7 +343,6 @@ export default {
     margin-top: 20px;
     font-family: 'Arapey', serif;
     font-size: 15px;
-    width: 90%;
 }
 
 .user_profil_foot a {

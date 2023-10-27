@@ -3,30 +3,51 @@ export default {
     data() {
         return {
             civility: '',
-            firstName: 'Prénom',
-            lastName: 'Nom',
-            email: 'email@email.com',
-            confirm_email: 'email@email.com',
-            phone_number: '0600000000',
-            password: 'password',
-            confirm_password: 'password',
+            firstName: '',
+            lastName: '',
+            email: '',
+            confirm_email: '',
+            phone_number: '',
+            password: '',
+            confirm_password: '',
             day: '',
             month: '',
             year: '',
         };
     },
+    computed: {
+        isFormValid() {
+            return (
+                this.civility !== '' &&
+                this.firstName !== '' &&
+                this.lastName !== '' &&
+                this.email !== '' &&
+                this.confirm_email !== '' && this.confirm_email === this.email &&
+                this.password !== '' &&
+                this.confirm_password !== '' && this.confirm_password === this.password &&
+                this.day !== '' &&
+                this.month !== '' &&
+                this.year !== ''
+            );
+        },
+    },
     methods: {
         createaccountData(event) {
             event.preventDefault();
-            console.log("Civilité:", this.civility);
-            console.log("Prénom:", this.firstName);
-            console.log("Nom:", this.lastName);
-            console.log("Adresse email:", this.email);
-            console.log("Confirmation de l'adresse email:", this.confirm_email);
-            console.log("Numéro de téléphone:", this.phone_number);
-            console.log("Mot de passe:", this.password);
-            console.log("Confirmation du mot de passe:", this.confirm_password);
-            console.log("Date de naissance:", this.day, "/", this.month, "/", this.year);
+            if (this.isFormValid) {
+                console.log("Civilité:", this.civility);
+                console.log("Prénom:", this.firstName);
+                console.log("Nom:", this.lastName);
+                console.log("Adresse email:", this.email);
+                console.log("Confirmation de l'adresse email:", this.confirm_email);
+                console.log("Numéro de téléphone:", this.phone_number);
+                console.log("Mot de passe:", this.password);
+                console.log("Confirmation du mot de passe:", this.confirm_password);
+                console.log("Date de naissance:", this.day, "/", this.month, "/", this.year);
+                this.$router.push({ name: 'login' });
+            } else {
+                console.log("Veuillez remplir tous les champs requis.");
+            }
         },
     },
 };
@@ -44,11 +65,13 @@ export default {
                         <h2>Civilité *</h2>
                         <div class="civility_div">
                             <div class="radio_button">
-                                <input v-model="civility" id="profile_civility1" name="profile_civility" type="radio" value="Mme">
+                                <input v-model="civility" id="profile_civility1" name="profile_civility" type="radio"
+                                    value="Mme">
                                 <label for="profile_civility1">Mme</label>
                             </div>
                             <div class="radio_button">
-                                <input v-model="civility" id="profile_civility2" name="profile_civility" type="radio" value="M">
+                                <input v-model="civility" id="profile_civility2" name="profile_civility" type="radio"
+                                    value="M">
                                 <label for="profile_civility2">M.</label>
                             </div>
                         </div>
@@ -71,7 +94,7 @@ export default {
                         <h2>N° de téléphone</h2>
                         <div class="input_div">
                             <input v-model="phone_number" data-val-regex-pattern="^[0-9]{5,20}$" id="profile_phone"
-                                type="tel" placeholder required />
+                                type="tel" />
                         </div>
                         <h2>Mot de passe *</h2>
                         <div class="input_div">
@@ -82,7 +105,7 @@ export default {
                             <input v-model="confirm_password" id="profile_confirm_password" type="password" placeholder
                                 required />
                         </div>
-                        <h2>Date de naissance</h2>
+                        <h2>Date de naissance *</h2>
                         <div class="born_div">
                             <input type="hidden">
                             <div class="born_input2 day">
@@ -138,10 +161,11 @@ export default {
                                 </select>
                             </div>
                         </div>
-                        <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à caractère personnel, veuillez consulter notre <a href="">Politique de Confidentialité.</a></p>
-                        <router-link :to="{ name: 'login' }">
-                            <button type="submit" id="create_account_btn">créer mon compte</button>
-                        </router-link>
+                        <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à caractère personnel,
+                            veuillez consulter notre <a href="">Politique de Confidentialité.</a></p>
+                        <!-- <router-link :to="{ name: 'login' }"> -->
+                        <button type="submit" id="create_account_btn">créer mon compte</button>
+                        <!-- </router-link> -->
                     </form>
                 </div>
             </div>
@@ -154,55 +178,73 @@ export default {
     background-color: #ddd;
     margin-bottom: 50px;
 }
+
 .account_creation {
     padding: 50px 50px;
     text-align: center;
 }
+
 .account_creation h1 {
     font-family: 'Arapey', serif;
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 30px;
 }
+
 .account_creation p {
     font-family: 'Arapey', serif;
     font-size: 18px;
     width: 400px;
 }
+
 .create_account_form {
     text-align: left;
     margin-top: 40px;
     padding-left: 20px;
 }
+
 .create_account_form h2 {
     margin-bottom: 10px;
     color: grey;
     font-size: 15px;
     font-family: 'Arapey', serif;
 }
+
 .create_account_form #forgot_password {
     color: black;
     text-decoration: none;
     font-family: 'Arapey', serif;
     font-size: 15px;
 }
+
 .create_account_form #forgot_password:hover {
     text-decoration: underline;
 }
+
 .create_account_form p {
     margin-top: 20px;
     font-family: 'Arapey', serif;
     font-size: 15px;
     padding-right: 25px;
 }
+
 .create_account_form a {
     color: black;
     text-decoration: underline;
     font-family: 'Arapey', serif;
     font-size: 15px;
 }
+
 .create_account_form a:hover {
     text-decoration: none;
+}
+
+.civility_div {
+    display: flex;
+    margin-bottom: 20px;
+}
+.radio_button{
+    margin-right: 60px;
 }
 .input_div input {
     border: 0;
@@ -213,19 +255,23 @@ export default {
     width: 350px;
     background-color: #ddd;
 }
+
 .born_div {
     display: flex;
     flex-flow: row nowrap;
 }
+
 .born_input2 {
     flex-basis: 33.33333333333%;
 }
+
 .born_input2 select {
     min-width: 100%;
     min-height: 30px;
     border-top: none;
     background-color: #ddd;
 }
+
 #create_account_btn {
     min-height: 50px;
     width: 250px;
@@ -236,7 +282,9 @@ export default {
     text-transform: uppercase;
     font-size: 20px;
 }
+
 #create_account_btn:hover {
     background-color: rgb(227, 167, 14);
     color: white;
-}</style>
+}
+</style>
