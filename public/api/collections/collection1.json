@@ -1,4 +1,5 @@
 {
+    "collection_name": "Graine de café",
     "collection": [
         {
             "id": 5,
@@ -22,6 +23,5 @@
             "gender": "Homme"
         }
     ],
-    "shipping_id": 1,
     "user": null
 }

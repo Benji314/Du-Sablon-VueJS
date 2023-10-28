@@ -6,10 +6,10 @@ export default {
         };
     },
     mounted() {
-        this.DetailProductData(this.$route.params.id);
+        this.detailProductData(this.$route.params.id);
     },
     methods: {
-        DetailProductData(productId) {
+        detailProductData(productId) {
             fetch('/public/api/products/product' + productId + '.json')
                 .then((response) => response.json())
                 .then((detail_data) => {
@@ -20,7 +20,7 @@ export default {
 
     watch: {
         '$route.params.id': function () {
-            this.DetailProductData(this.$route.params.id);
+            this.detailProductData(this.$route.params.id);
         }
     }
 };

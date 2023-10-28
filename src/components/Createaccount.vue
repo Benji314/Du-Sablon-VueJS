@@ -32,7 +32,7 @@ export default {
         },
     },
     methods: {
-        createaccountData(event) {
+        createAccountData(event) {
             event.preventDefault();
             if (this.isFormValid) {
                 console.log("Civilité:", this.civility);
@@ -61,7 +61,7 @@ export default {
                 <p>Cet espace vous permet de gérer vos informations personnelles, vos commandes en ligne, votre abonnement
                     aux newsletters et flux d’actualités.</p>
                 <div class="create_account_form">
-                    <form @submit="createaccountData" id="connection_form_data">
+                    <form @submit="createAccountData" id="connection_form_data">
                         <h2>Civilité *</h2>
                         <div class="civility_div">
                             <div class="radio_button">

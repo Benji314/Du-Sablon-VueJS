@@ -6,10 +6,10 @@ export default {
         };
     },
     mounted() {
-        this.CartData();
+        this.cartData();
     },
     methods: {
-        CartData() {
+        cartData() {
             fetch('/public/api/cart.json')
                 .then((response) => response.json())
                 .then((cart_data) => {

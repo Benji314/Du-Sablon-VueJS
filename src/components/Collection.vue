@@ -4,6 +4,7 @@ export default {
         return {
             braceletsBeforeFilters: [],
             collection: [],
+            collection_name: "",
             sortByPrice: false,
             selectedGender: null,
         };
@@ -11,28 +12,29 @@ export default {
 
     mounted() {
         const collectionId = this.$route.params.id;
-        this.CollectionData(collectionId);
+        this.collectionData(collectionId);
     },
 
     methods: {
-        CollectionData(collectionId) {
+        collectionData(collectionId) {
             fetch('/public/api/collections/collection'+ collectionId + '.json')
                 .then((response) => response.json())
                 .then((bracelet_data) => {
                     this.braceletsBeforeFilters = bracelet_data.collection;
                     this.collection = this.braceletsBeforeFilters;
+                    this.collection_name = bracelet_data.collection_name;
                 });
         },
-        CollectionByPrice() {
-            if (this.sortByPrice === 'crescent') {
+        collectionByPrice() {
+            if (this.sortByPrice === 'ascending') {
                 this.collection.sort((a, b) => a.unitPrice - b.unitPrice); // Tri croissant
             } else if (this.sortByPrice === 'descending') {
                 this.collection.sort((a, b) => b.unitPrice - a.unitPrice); // Tri décroissant
             } else {
-                this.CollectionData();
+                this.collectionData();
             }
         },
-        CollectionByGender() {
+        collectionByGender() {
             if (this.selectedGender === "femme") {
                 this.collection = this.braceletsBeforeFilters.filter((product) => product.gender === "Femme");
             } else if (this.selectedGender === "homme") {
@@ -44,8 +46,8 @@ export default {
     },
 
     watch: {
-        sortByPrice: 'CollectionByPrice',
-        selectedGender: 'CollectionByGender',
+        sortByPrice: 'collectionByPrice',
+        selectedGender: 'collectionByGender',
     },
 };
 </script>
@@ -87,12 +89,9 @@ export default {
                             <p>Nombre d'articles : {{ collection.length }}</p>
                         </div>
                         <div class="col-md-5 offset-md-1 col_class title_bracelet">
-                            <h1>Graine de Café</h1>
+                            <h1>{{ collection_name }}</h1>
                         </div>
                     </div>
-                    <!-- <div class="row row_class2 img_bracelet">
-                        <a href=""><img src="/public/img/bracelet_accueil.jpg" alt=""></a>
-                    </div> -->
                 </div>
 
                 <div class="row row_class2">

@@ -32,7 +32,7 @@ export default {
         <div class="col-10 offset-1 col-xl-5 offset-xl-1 col_class create_account_div border-end border-5 border-white">
             <div class="register">
                 <h1>déjà inscrit(e) ?</h1>
-                <p>Si vous êtes déjà inscrit(e) chez Du Sablon, veuillez vous connecter ici :</p>
+                <p>Si vous êtes déjà inscrit(e), veuillez vous connecter ici :</p>
                 <div class="connection_form">
                     <form @submit="accountSubmit" id="connection_form_data">
                         <h2>Adresse email *</h2>

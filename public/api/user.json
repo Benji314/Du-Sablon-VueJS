@@ -1,0 +1,19 @@
+{
+    "homeProducts": [
+        {
+            "id": 1,
+            "civility": "M",
+            "name": "GRAINE DE CAFE",
+            "unitPrice": 14.50,
+            "path_img": "/public/img/R1241.001.png",
+            "gender": "Femme"
+        },
+        {
+            "id": 2,
+            "name": "MAILLE FINE FEMME",
+            "unitPrice": 12.9,
+            "path_img": "/public/img/R1128.001.png",
+            "gender": "Femme"
+        }
+    ]
+}

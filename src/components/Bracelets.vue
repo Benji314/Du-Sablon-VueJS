@@ -10,11 +10,11 @@ export default {
     },
 
     mounted() {
-        this.BraceletData();
+        this.braceletData();
     },
 
     methods: {
-        BraceletData() {
+        braceletData() {
             fetch('/public/api/bracelets.json')
                 .then((response) => response.json())
                 .then((bracelet_data) => {
@@ -22,16 +22,16 @@ export default {
                     this.bracelets = this.braceletsBeforeFilters;
                 });
         },
-        BraceletsByPrice() {
+        braceletsByPrice() {
             if (this.sortByPrice === 'crescent') {
                 this.bracelets.sort((a, b) => a.unitPrice - b.unitPrice); // Tri croissant
             } else if (this.sortByPrice === 'descending') {
                 this.bracelets.sort((a, b) => b.unitPrice - a.unitPrice); // Tri décroissant
             } else {
-                this.BraceletData();
+                this.braceletData();
             }
         },
-        BraceletsByGender() {
+        braceletsByGender() {
             if (this.selectedGender === "femme") {
                 this.bracelets = this.braceletsBeforeFilters.filter((bracelet) => bracelet.gender === "Femme");
             } else if (this.selectedGender === "homme") {
@@ -43,8 +43,8 @@ export default {
     },
 
     watch: {
-        sortByPrice: 'BraceletsByPrice',
-        selectedGender: 'BraceletsByGender',
+        sortByPrice: 'braceletsByPrice',
+        selectedGender: 'braceletsByGender',
     },
 };
 </script>

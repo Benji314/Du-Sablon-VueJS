@@ -7,11 +7,11 @@ export default {
     },
 
     mounted() {
-        this.HomeProductData();
+        this.homeProductData();
     },
 
     methods: {
-        HomeProductData() {
+        homeProductData() {
             fetch('/public/api/home.json')
                 .then((response) => response.json())
                 .then((home_data) => {
