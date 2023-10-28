@@ -1,9 +1,11 @@
 <script>
 import WelcomeUser from "./WelcomeUser.vue"
+import NavUser from "./NavUser.vue"
 
 export default {
     components: {
         WelcomeUser,
+        NavUser,
     },
 
     data() {
@@ -31,38 +33,7 @@ export default {
 <template>
     <div class="row row_class">
         <div class="col-md-2 offset-md-1 col_class profil_nav">
-            <h1>DU SABLON</h1>
-            <div class="d-flex flex-column">
-                <nav>
-                    <ul class="profil_menu">
-                        <li>
-                            <router-link :to="{ name: 'login' }">
-                                aperçu
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link :to="{ name: 'profile' }">
-                                mon profil
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link :to="{ name: 'myorder' }">
-                                mes commandes
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link :to="{ name: 'adress' }">
-                                mes adresses
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link :to="{ name: 'wishlist' }">
-                                ma wishlist
-                            </router-link>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+            <NavUser></NavUser>
         </div>
 
         <div class="col-md-8 col_class">
