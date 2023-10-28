@@ -6,39 +6,41 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // Import de nos components
 import App from './App.vue'
-import Home from './components/Home.vue'
+
 import Account from './components/Account.vue'
+import Adress from './components/Adress.vue'
 import Bracelets from './components/Bracelets.vue'
 import Cart from './components/Cart.vue'
+import Collection from './components/Collection.vue'
 import Createaccount from './components/Createaccount.vue'
 import DetailProduct from './components/DetailProduct.vue'
+import Home from './components/Home.vue'
 import Login from './components/Login.vue'
-import Adress from './components/Adress.vue'
-import Profile from './components/Profile.vue'
 import Myorder from './components/Myorder.vue'
+import Profile from './components/Profile.vue'
 import Wishlist from './components/Wishlist.vue'
-import Collection from './components/Collection.vue'
 
 
 const routes = [
-    {path: '/accueil', component: Home, name: "home" },
+    
     {path: '/connexion', component: Account, name: "account" },
+    {path: '/mes-adresses', component: Adress, name: "adress" },
     {path: '/bracelets', component: Bracelets, name: "bracelets" },
     {path: '/mon-panier', component: Cart, name: "cart" },
+    {path: '/collection/:id', component: Collection, name: "collection" },
     {path: '/inscription', component: Createaccount, name: "createaccount" },
     {path: '/produit/:id', component: DetailProduct, name: 'detailproduct' },
+    {path: '/accueil', component: Home, name: "home" },
     {path: '/aperçu', component: Login, name: "login" },
-    {path: '/mes-adresses', component: Adress, name: "adress" },
-    {path: '/mon-profil', component: Profile, name: "profile" },
     {path: '/mes-commandes', component: Myorder, name: "myorder" },
+    {path: '/mon-profil', component: Profile, name: "profile" },
     {path: '/ma-wishlist', component: Wishlist, name: "wishlist" },
-    {path: '/collection/:id', component: Collection, name: "collection" },
-    
 ]
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
+
     scrollBehavior(to, from, savedPosition) {
         if (to.hash) {
           return {
