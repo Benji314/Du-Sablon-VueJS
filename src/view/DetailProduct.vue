@@ -69,9 +69,11 @@ export default {
             <p>Découvrez les autres création uniques </p>
             <div class="col-md-4 col_class" v-for="associateProduct in product.associateProducts"
                 :key="associateProduct.id">
-                <div class="others_img_div">
-                    <img :src="associateProduct.product_img" alt="">
-                </div>
+                <router-link :to="{ name: 'detailproduct', params: { id: associateProduct.id } }">
+                    <div class="others_img_div">
+                        <img :src="associateProduct.product_img" alt="">
+                    </div>
+                </router-link>
                 <h2>{{ associateProduct.product_name }}</h2>
                 <h3>{{ associateProduct.product_price }}</h3>
                 <router-link :to="{ name: 'detailproduct', params: { id: associateProduct.id } }">
@@ -83,8 +85,7 @@ export default {
             <div class="col-md-5 col_class delivery_gift_div">
                 <div class="dlvry_gift_content">
                     <h1>LIVRAISON/RETOUR</h1>
-                    <p>Nous proposons différents modes de livraison. Choisissez celui que vous préférez. vous pouvez
-                        retourner votre article Du sablon dans un délai de 15 jours.</p>
+                    <p>Nous proposons différents modes de livraison. Choisissez celui que vous préférez. vous pouvez retourner votre article Du sablon dans un délai de 15 jours.</p>
                 </div>
             </div>
             <div class="col-md-5 offset-md-2 col_class delivery_gift_div">
@@ -94,33 +95,7 @@ export default {
                 </div>
             </div>
         </div>
-        <!-- <div class="row row_class associate_creation">
-            <h1>Vous aimerez aussi</h1>
-            <div class="col-md-4 col_class">
-                <div class="others_img_div">
-                    <a href="/html/detailproduit.html"><img src="/img/R1231.001.png" alt=""></a>
-                </div>
-                <h2>GRAINE DE CAFE NOIRE</h2>
-                <h3>€ 14,5</h3>
-                <a href="/html/detailproduit.html"><button class="associate_crea_btn">ACHETER</button></a>
-            </div>
-            <div class="col-md-4 col_class">
-                <div class="others_img_div">
-                    <a href="/html/detailproduit.html"><img src="/img/R1232.001.png" alt=""></a>
-                </div>
-                <h2>GRAINE DE CAFE OR</h2>
-                <h3>€ 14,5</h3>
-                <a href="/html/detailproduit.html"><button class="associate_crea_btn">ACHETER</button></a>
-            </div>
-            <div class="col-md-4 col_class">
-                <div class="others_img_div">
-                    <a href="/html/detailproduit.html"><img src="/img/R1229.001.png" alt=""></a>
-                </div>
-                <h2>BRACELET OR</h2>
-                <h3>€ 14,5</h3>
-                <a href="/html/detailproduit.html"><button class="associate_crea_btn">ACHETER</button></a>
-            </div>
-        </div> -->
+
         <div class="row row_class three_arguments">
             <div class="col-md-3 offset-md-1 col_class arguments_div">
                 <i class="fa-solid fa-truck-fast"></i>
@@ -322,4 +297,5 @@ export default {
     font-family: 'Arapey', serif;
     font-size: 35px;
     font-weight: bold;
-}</style>
+}
+</style>

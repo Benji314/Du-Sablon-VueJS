@@ -15,7 +15,7 @@ export default {
             fetch('/public/api/home.json')
                 .then((response) => response.json())
                 .then((home_data) => {
-                    this.homeProducts = home_data.homeProducts;
+                    this.homeProducts = home_data.products;
                 });
         },
     },

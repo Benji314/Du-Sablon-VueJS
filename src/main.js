@@ -1,6 +1,7 @@
 import './assets/main.css'
 
 // Import de nos librairies
+//import { createPinia } from 'pinia';
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from "vue-router";
 
