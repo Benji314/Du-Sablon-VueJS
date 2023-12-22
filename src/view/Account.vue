@@ -1,3 +1,30 @@
+<!-- <script>
+import { useAccountStore } from '/src/account'
+
+export default {
+  setup() {
+    const accountStore = useAccountStore();
+
+    const accountSubmit = (event) => {
+      event.preventDefault();
+
+      accountStore.authenticate();
+
+      if (accountStore.isAuthenticated) {
+        this.$router.push({ name: 'login' });
+      } else {
+        console.log("L'utilisateur n'est pas authentifié.");
+      }
+    };
+
+    return {
+      accountStore,
+      accountSubmit,
+    };
+  },
+};
+</script> -->
+
 <script>
 export default {
     data() {

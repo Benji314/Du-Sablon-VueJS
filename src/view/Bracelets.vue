@@ -53,7 +53,7 @@ export default {
     <main>
         <div class="container">
             <div class="row row_class">
-                <div class="col-md-2 col_class filters">
+                <div class="col-md-2 col_class filters mt-5">
                     <h1>TRIER PAR</h1>
                     <div class="d-flex flex-column">
                         <!-- <div class="mb-2">
@@ -86,11 +86,11 @@ export default {
                 </div>
                 <div class="col-md-10 col_class">
                     <div class="row row_class2">
-                        <div class="col-md-2 col_class nb_article">
+                        <div class="col-md-2 col_class nb_article d-flex align-items-center">
                             <p>Nombre d'articles : {{ bracelets.length }}</p>
                         </div>
                         <div class="col-md-4 offset-md-2 col_class title_bracelet">
-                            <h1>BRACELETS</h1>
+                            <h1 class="text-center">BRACELETS</h1>
                         </div>
                     </div>
                     <div class="row row_class2 img_bracelet">
@@ -99,17 +99,17 @@ export default {
                 </div>
 
 
-                <div class="row row_class2">
-                    <div v-for="bracelet in bracelets" :key="bracelet.id" class="col-md-4 col_class bracelet_class">
-                        <div class="bracelets">
+                <div class="row row_class2 mt-3">
+                    <div v-for="bracelet in bracelets" :key="bracelet.id" class="col-md-4 col_class bracelet_class mb-4">
+                        <div class="bracelets mx-auto w-100 text-center">
                             <router-link :to="{ name: 'detailproduct', params: { id: bracelet.id }}">
-                                <img :src="bracelet.path_img" alt="">
+                                <img :src="bracelet.path_img" alt="" class="bracelet_img img-fluid">
                             </router-link>
-                            <h1>{{ bracelet.name }}</h1>
+                            <h1 class="my-0">{{ bracelet.name }}</h1>
                             <p>Du Sablon</p>
                             <h2>€ {{ bracelet.unitPrice }}</h2>
                             <router-link :to="{ name: 'detailproduct', params: { id: bracelet.id }}">
-                                <button class="buy_btn">ACHETER</button>
+                                <button class="buy_btn w-75 rounded-pill">ACHETER</button>
                             </router-link>
                         </div>
                     </div>
@@ -122,13 +122,9 @@ export default {
 
 
 <style scoped>
-/* .filters{
-    margin-top: 20%;
-} */
 .filters h1 {
     font-family: 'Arapey', serif;
     font-size: 25px;
-    margin-left: 10px;
 }
 
 .filters .d-flex.flex-column>div {
@@ -144,7 +140,6 @@ export default {
 .filters input[type="radio"]+label {
     position: relative;
     padding-left: 30px;
-    /* cursor: pointer; */
 }
 
 .filters input[type="radio"]+label::before {
@@ -163,21 +158,14 @@ export default {
     border-color: rgb(227, 167, 14);
 }
 
-.nb_article {
-    display: flex;
-    align-items: center;
-}
-
 .nb_article p {
     font-family: 'Arapey', serif;
-    margin-bottom: 0px;
     font-size: 16px;
 }
 
 .title_bracelet h1 {
     font-family: 'Arapey', serif;
     font-weight: bold;
-    text-align: center;
 }
 
 .img_bracelet img {
@@ -188,32 +176,19 @@ export default {
     position: relative;
 }
 
-.bracelet_class:hover {
-    text-align: center;
-}
-
-.bracelets {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: auto;
-    text-align: center;
+.bracelet_img{
+    min-height: 320px;
 }
 
 .bracelets h1 {
     font-weight: 600;
     font-size: 20px;
-    margin-bottom: 0px;
-    margin-top: 0px;
     font-family: 'Arapey', serif;
-    color: #000;
 }
 
 .bracelets p {
     font-size: 10px;
     color: rgb(235, 163, 39);
-    margin-top: 0px;
-    margin-bottom: 0px;
     font-family: 'Arapey', serif;
     font-style: italic;
 }
@@ -221,21 +196,12 @@ export default {
 .bracelets h2 {
     font-weight: 600;
     font-size: 20px;
-    margin-bottom: 10px;
-    margin-top: 0px;
-    color: #000;
 }
 
 .buy_btn {
     display: none;
-    background-color: #000;
-    color: white;
     font-family: 'Arapey', serif;
     font-size: 22px;
-    width: 80%;
-    height: 35px;
-    margin-bottom: 10px;
-    border-radius: 15px;
 }
 
 .bracelet_class:hover .buy_btn {

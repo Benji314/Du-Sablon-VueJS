@@ -29,11 +29,11 @@ export default {
             <div class="row row_class2">
                 <div v-for="(homeProduct, index) in homeProducts" :key="homeProduct.id" class="col_class"
                     :class="{ 'col-md-10 offset-1': index % 3 === 0, 'col-md-5 offset-1': index % 3 !== 0 }">
-                    <div class="collection_div">
+                    <div class="collection_div text-center">
                         <router-link :to="{ name: 'collection', params: { id: homeProduct.id } }">
                             <img :src="homeProduct.path_img" alt="">
-                            <h1>{{ homeProduct.name }}</h1>
-                            <p class="discover">Découvrir la collection</p>
+                            <h1 class="font-weight-bold text-uppercase my-0">{{ homeProduct.name }}</h1>
+                            <p class="discover mt-0">Découvrir la collection</p>
                         </router-link>
                     </div>
                 </div>
@@ -52,24 +52,24 @@ export default {
     margin-right: auto;
     max-width: 700px;
     height: auto;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .collection_div h1 {
-    font-weight: 600;
+    /* font-weight: 600; */
     font-size: 30px;
-    margin-bottom: 0px;
-    margin-top: 0px;
+    /* margin-bottom: 0px;
+    margin-top: 0px; */
     font-family: 'Arapey', serif;
     color: #000;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     transition: font-size 1s ease-in-out;
 }
 
 .collection_div p {
     font-size: 15px;
     color: rgb(235, 163, 39);
-    margin-top: 0px;
+    /* margin-top: 0px; */
     font-family: 'Arapey', serif;
     font-style: italic;
     transition: font-size 1s ease-in-out;

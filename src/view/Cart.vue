@@ -45,13 +45,13 @@ export default {
 <template>
     <div class="container-md the_base">
         <div class="row row_class">
-            <div class="col_class cart_title">
+            <div class="col_class cart_title d-flex justify-content-center">
                 <h1>PANIER</h1>
             </div>
         </div>
         <div class="row row_class">
             <div class="col_class table-responsive">
-                <table class="panier-table">
+                <table class="panier-table mx-auto">
                     <thead>
                         <tr>
                             <th>Produit</th>
@@ -63,7 +63,7 @@ export default {
                     </thead>
                     <tbody>
                         <tr v-for="product in cartProducts" :key="product.id" class="cart_product">
-                            <td><a href=""><img :src="product.path_img" alt="" class="img_cart"></a></td>
+                            <td><a href=""><img :src="product.path_img" alt="" class="w-100"></a></td>
                             <td class="d-none d-sm-table-cell">{{ product.name }}</td>
                             <td class="price_unit">{{ product.unitPrice }} €</td>
                             <td class="quantity">
@@ -79,14 +79,14 @@ export default {
                     <tfoot>
                         <tr class="cart_foot">
                             <td colspan="3">Total</td>
-                            <td class="total_cart" colspan="3">{{ totalCart }} €</td>
+                            <td class="total_cart" colspan="2">{{ totalCart }} €</td>
                         </tr>
                     </tfoot>
                 </table>
             </div>
             <div class="row row_class">
                 <div class="col_class payment_button">
-                    <button id="confirm-command">Procéder à l'achat</button>
+                    <button id="confirm-command" class="px-3 rounded-pill text-uppercase mt-5">Procéder à l'achat</button>
                 </div>
             </div>
         </div>
@@ -94,20 +94,8 @@ export default {
 </template>
 
 <style scoped>
-.cart_title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .cart_title h1 {
     font-family: 'Arapey', serif;
-}
-
-.panier-table {
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
 }
 
 .panier-table th {
@@ -126,17 +114,11 @@ export default {
 }
 
 .panier-table .delete {
-    max-width: 200px;
     border: none;
-    text-align: center;
 }
 
 .cart_product {
     font-weight: 600;
-}
-
-.img_cart {
-    max-width: 100%;
 }
 
 .cart_product .total_price {
@@ -150,7 +132,7 @@ tfoot {
 .panier-table .cart_foot td {
     max-width: 200px;
     border: none;
-    text-align: center;
+    text-align: end;
     font-size: larger;
     padding-top: 30px;
 }
@@ -168,11 +150,9 @@ tfoot {
 
 #confirm-command {
     min-height: 50px;
-    margin-top: 100px;
     border: 2px solid rgb(227, 167, 14);
     background-color: white;
     font-weight: bold;
-    text-transform: uppercase;
     font-size: 20px;
 }
 

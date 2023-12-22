@@ -8,33 +8,32 @@ export default {
         <div class="container the_base">
             <div class="row row_class">
                 <div class="col-md-8 offset-md-2 col_class">
-                    <hr>
+                    <hr class="m-0 mb-4">
                     <div class="reseaux">
-                        <h1>NOUS SUIVRE</h1>
+                        <h1 class="mb-4">NOUS SUIVRE</h1>
                         <nav class="reseaux-nav">
                             <ul class="flex">
                                 <a href="">
-                                    <li><i class="fa-brands fa-instagram"></i></li>
+                                    <li><i class="fa-brands fa-instagram mx-4 mb-4"></i></li>
                                 </a>
                                 <a href="">
-                                    <li><i class="fa-brands fa-facebook"></i></li>
+                                    <li><i class="fa-brands fa-facebook mx-4"></i></li>
                                 </a>
                                 <a href="">
-                                    <li><i class="fa-brands fa-pinterest"></i></li>
+                                    <li><i class="fa-brands fa-pinterest mx-4"></i></li>
                                 </a>
-
                             </ul>
                         </nav>
                     </div>
-                    <hr>
+                    <hr class="m-0 mb-4">
                 </div>
             </div>
             <div class="row row_class">
                 <div class="col-md-5 offset-md-1 col_class ">
-                    <div class="service_client">
-                        <h1>SERVICE CLIENT</h1>
+                    <div class="service_client text-left">
+                        <h1 class="text-center mb-4">SERVICE CLIENT</h1>
                         <a href="">
-                            <h5>NOUS CONTACTER </h5>
+                            <h5 class="mb-2">NOUS CONTACTER </h5>
                         </a>
                         <a href="">
                             <h5>ACHAT EN LIGNE </h5>
@@ -54,8 +53,8 @@ export default {
                     </div>
                 </div>
                 <div class="col-md-5 col_class">
-                    <div class="service_client">
-                        <h1>LEGAL ET CONFIDENTIALITE</h1>
+                    <div class="service_client text-left">
+                        <h1 class="text-center mb-4">LEGAL ET CONFIDENTIALITE</h1>
                         <a href="">
                             <h5>CONDITIONS D'UTILISATION</h5>
                         </a>

@@ -85,26 +85,26 @@ export default {
                 </div>
                 <div class="col-md-10 col_class">
                     <div class="row row_class2">
-                        <div class="col-md-2 col_class nb_article">
+                        <div class="col-md-2 col_class nb_article d-flex mt-0">
                             <p>Nombre d'articles : {{ collection.length }}</p>
                         </div>
-                        <div class="col-md-5 offset-md-1 col_class title_bracelet">
-                            <h1>{{ collection_name }}</h1>
+                        <div class="col-md-5 offset-md-1 col_class title_bracelet mt-5">
+                            <h1 class="text-center text-uppercase">{{ collection_name }}</h1>
                         </div>
                     </div>
                 </div>
 
                 <div class="row row_class2">
                     <div v-for="product in collection" :key="product.id" class="col-md-4 col_class bracelet_class">
-                        <div class="bracelets">
+                        <div class="bracelets w-100 text-center">
                             <router-link :to="{ name: 'detailproduct', params: { id: product.id }}">
                                 <img :src="product.path_img" alt="">
                             </router-link>
-                            <h1>{{ product.name }}</h1>
+                            <h1 class="my-0">{{ product.name }}</h1>
                             <p>Du Sablon</p>
                             <h2>€ {{ product.unitPrice }}</h2>
                             <router-link :to="{ name: 'detailproduct', params: { id: product.id }}">
-                                <button class="buy_btn">ACHETER</button>
+                                <button class="buy_btn w-75 rounded-pill">ACHETER</button>
                             </router-link>
                         </div>
                     </div>
@@ -116,13 +116,9 @@ export default {
 </template>
 
 <style scoped>
-/* .filters{
-    margin-top: 20%;
-} */
 .filters h1 {
     font-family: 'Arapey', serif;
     font-size: 25px;
-    margin-left: 10px;
 }
 
 .filters .d-flex.flex-column>div {
@@ -138,7 +134,6 @@ export default {
 .filters input[type="radio"]+label {
     position: relative;
     padding-left: 30px;
-    /* cursor: pointer; */
 }
 
 .filters input[type="radio"]+label::before {
@@ -156,59 +151,28 @@ export default {
     background-color: rgb(227, 167, 14);
     border-color: rgb(227, 167, 14);
 }
-
-.nb_article {
-    display: flex;
-    align-items: center;
-}
-
 .nb_article p {
     font-family: 'Arapey', serif;
-    margin-bottom: 0px;
     font-size: 16px;
 }
 
 .title_bracelet h1 {
     font-family: 'Arapey', serif;
     font-weight: bold;
-    text-align: center;
-    text-transform: uppercase;
 }
-
-.img_bracelet img {
-    width: 100%;
-}
-
 .bracelet_class {
     position: relative;
-}
-
-.bracelet_class:hover {
-    text-align: center;
-}
-
-.bracelets {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    height: auto;
-    text-align: center;
 }
 
 .bracelets h1 {
     font-weight: 600;
     font-size: 20px;
-    margin-bottom: 0px;
-    margin-top: 0px;
     font-family: 'Arapey', serif;
-    color: #000;
 }
 
 .bracelets p {
     font-size: 10px;
     color: rgb(235, 163, 39);
-    margin-top: 0px;
-    margin-bottom: 0px;
     font-family: 'Arapey', serif;
     font-style: italic;
 }
@@ -216,21 +180,12 @@ export default {
 .bracelets h2 {
     font-weight: 600;
     font-size: 20px;
-    margin-bottom: 10px;
-    margin-top: 0px;
-    color: #000;
 }
 
 .buy_btn {
     display: none;
-    background-color: #000;
-    color: white;
     font-family: 'Arapey', serif;
     font-size: 22px;
-    width: 80%;
-    height: 35px;
-    margin-bottom: 10px;
-    border-radius: 15px;
 }
 
 .bracelet_class:hover .buy_btn {

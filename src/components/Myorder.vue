@@ -19,9 +19,9 @@ export default {
         <div class="col-md-8 col_class">
             <WelcomeUser></WelcomeUser>
 
-            <div class="row row_class2">
-                <div class="col-md-12 col_class user_order">
-                    <h3>Mes commandes</h3>
+            <div class="row row_class2 px-5">
+                <div class="col-md-12 col_class user_order mb-3">
+                    <h3 class="mt-5">Mes commandes</h3>
                     <p>Affichez les détails de votre commande. Si vous souhaitez retourner ou échanger un article, vous
                         pourrez contacter notre Service Client pour demander un numéro d’autorisation de retour une fois que
                         votre commande sera livrée.</p>
@@ -35,20 +35,15 @@ export default {
 </template>
 
 <style scoped>
-.user_order {
-    text-align: left;
-}
 
 .user_order h3 {
     font-family: 'Arapey', serif;
-    margin-top: 50px;
     font-weight: bold;
 }
 
 .user_order p {
     font-family: 'Arapey', serif;
     margin-top: 20px;
-    margin-bottom: 0px;
     font-size: 16px;
 }
 
@@ -56,7 +51,6 @@ export default {
     color: black;
     text-decoration: underline;
     font-family: 'Arapey', serif;
-    margin-bottom: 20px;
     font-size: 16px;
     font-weight: bold;
 }

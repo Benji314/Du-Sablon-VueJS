@@ -19,21 +19,21 @@ export default {
         <div class="col-md-8 col_class">
             <WelcomeUser></WelcomeUser>
 
-            <div class="row row_class2">
+            <div class="row row_class2 px-5">
                 <div class="col-md-12 col_class my_wishlist">
-                    <h3>Ma Wishlist</h3>
-                    <p>Créez votre Sélection en ajoutant les articles que vous aimez. Vous pouvez ajouter jusqu’à 50 articles, vérifier leur disponibilité et les ajouter à votre Panier à tout moment.</p>
+                    <h3 class="mt-5">Ma Wishlist</h3>
+                    <p class="my-4">Créez votre Sélection en ajoutant les articles que vous aimez. Vous pouvez ajouter jusqu’à 50 articles, vérifier leur disponibilité et les ajouter à votre Panier à tout moment.</p>
                     <hr>
-                    <div class="wishlist_user">
-                        <p>La sélection de (USER)</p>
+                    <div class="wishlist_user d-flex justify-content-between align-items-center">
+                        <p class="text-uppercase">La sélection de (USER)</p>
                         <div class="share_wishlist">
-                            <a href="">
-                                <i class="fa-solid fa-share-nodes"></i>
-                                <p>PARTAGER LA WISHLIST</p>
+                            <a class="d-flex align-items-center" href="">
+                                <i class="fa-solid fa-share-nodes me-2"></i>
+                                <p class="text-uppercase m-0">Partager la wishlist</p>
                             </a>
                         </div>
                     </div>
-                    <div class="wishlist_content">
+                    <div class="wishlist_content my-5">
                         <p>Votre Wish List ne contient aucun article.</p>
                     </div>
                 </div>
@@ -45,26 +45,14 @@ export default {
 <style scoped>
 .my_wishlist h3 {
     font-family: 'Arapey', serif;
-    margin-top: 50px;
     font-weight: bold;
 }
 .my_wishlist p {
     font-family: 'Arapey', serif;
-    margin: 20px 30px 20px 0px;
     font-size: 16px;
 }
-.wishlist_user {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.share_wishlist a {
-    display: flex;
-    align-items: center;
-    margin-right: 60px;
-}
+
 .wishlist_user p {
-    text-transform: uppercase;
     color: black;
     font-size: 20px;
     font-family: 'Arapey', serif;
@@ -73,10 +61,8 @@ export default {
 .share_wishlist i {
     font-size: 20px;
     color: rgb(227, 167, 14);
-    margin-right: 10px;
 }
 .share_wishlist p {
-    margin: 0;
     font-size: 18px;
     font-weight: normal;
 }
@@ -84,7 +70,6 @@ export default {
     text-decoration: underline;
 }
 .wishlist_content{
-    margin: 50px 0px;
     font-size: 16px;
     font-family: 'Arapey', serif;
 }

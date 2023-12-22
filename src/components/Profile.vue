@@ -39,21 +39,21 @@ export default {
         <div class="col-md-8 col_class">
             <WelcomeUser></WelcomeUser>
 
-            <div class="row row_class2">
-                <div class="col-md-6 col_class user_profil">
+            <div class="row row_class2 px-5">
+                <div class="col-md-7 col_class">
                     <div class="profil_form_head">
-                        <h3>BIENVENUE BENJAMIN</h3>
-                        <p>Vérifiez et modifiez vos informations personnelles, votre adresse email et votre mot de
+                        <h3 class="mt-5">Mon profil</h3>
+                        <p class="mt-4 w-75">Vérifiez et modifiez vos informations personnelles, votre adresse email et votre mot de
                             passe.</p>
                     </div>
-                    <div class="profil_form">
+                    <div class="profil_form my-4">
                         <form @submit="profileData" id="profil_form_data" action="">
                             <div class="change_email_password">
                                 <button><a href="">Changer d'adresse email</a></button>
                                 <button><a href="">Changer de mot de passe</a></button>
                             </div>
                             <h4>Civilité *</h4>
-                            <div class="civility_div">
+                            <div class="d-flex mb-4">
                                 <div class="radio_button">
                                     <input v-model="civility" id="profile_civility1" name="profile_civility" type="radio"
                                         value="Mme">
@@ -75,7 +75,7 @@ export default {
                                 <input v-model="lastName" id="profile_lastname" type="text" placeholder required />
                             </div>
                             <h4>Date de naissance</h4>
-                            <div class="born_div">
+                            <div class="born_div d-flex">
                                 <input type="hidden" value="">
                                 <div class="born_input day">
                                     <select v-model="day" name="day" id="day">
@@ -206,16 +206,17 @@ export default {
 
                             </div>
 
-                            <div class="col-md-12 col_class user_profil_save">
-                                <button type="submit" id="save">sauvegarder</button>
+                            <div class="col-md-12 col_class">
+                                <button type="submit" id="save" class="my-5 text-uppercase">sauvegarder</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
             <div class="row row_class2">
-                <div class="col-md-6 col_class user_profil_foot">
-                    <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à caractère personnel, veuillez consulter notre 
+                <div class="col-md-6 col_class user_profil_foot ps-5">
+                    <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à caractère personnel,
+                        veuillez consulter notre
                         <a href="">Politique de Confidentialité</a>.
                     </p>
                 </div>
@@ -225,26 +226,14 @@ export default {
 </template>
 
 <style scoped>
-.user_profil {
-    padding-left: 50px;
-}
-
 .profil_form_head h3 {
-    margin-top: 20px;
     font-family: 'Arapey', serif;
-    font-size: 25px;
-    width: 600px;
+    font-weight: bold;
 }
 
 .profil_form_head p {
-    margin-top: 20px;
     font-family: 'Arapey', serif;
     font-size: 16px;
-    width: 75%;
-}
-
-.profil_form {
-    margin-bottom: 20px;
 }
 
 .profil_form h4 {
@@ -275,11 +264,6 @@ export default {
     text-decoration-color: rgb(227, 167, 14);
 }
 
-.civility_div {
-    display: flex;
-    margin-bottom: 30px;
-}
-
 .radio_button {
     margin-right: 60px;
 }
@@ -292,10 +276,9 @@ export default {
     margin-bottom: 20px;
 }
 
-.born_div {
-    display: flex;
+/* .born_div {
     flex-flow: row nowrap;
-}
+} */
 
 .born_input {
     flex-basis: 33.33333333333%;
@@ -307,12 +290,7 @@ export default {
     border-top: none;
 }
 
-.user_profil_foot {
-    padding-left: 50px;
-}
-
 .user_profil_foot p {
-    margin-top: 20px;
     font-family: 'Arapey', serif;
     font-size: 15px;
 }
@@ -331,15 +309,13 @@ export default {
 #save {
     min-height: 50px;
     width: 200px;
-    margin-top: 40px;
     border: 2px solid rgb(227, 167, 14);
     background-color: white;
     font-weight: bold;
-    text-transform: uppercase;
     font-size: 20px;
 }
-
 #save:hover {
     background-color: rgb(227, 167, 14);
     color: white;
-}</style>
+}
+</style>

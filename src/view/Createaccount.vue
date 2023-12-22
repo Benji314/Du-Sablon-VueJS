@@ -55,16 +55,16 @@ export default {
 
 <template>
     <div class="row row_class">
-        <div class="col-md-4 offset-md-4 col_class create_account_div">
-            <div class="account_creation">
-                <h1>créez votre compte</h1>
+        <div class="col-md-4 offset-md-4 col_class create_account_div mb-5 mt-4">
+            <div class="account_creation p-5">
+                <h1 class="text-center text-uppercase mb-4">créez votre compte</h1>
                 <p>Cet espace vous permet de gérer vos informations personnelles, vos commandes en ligne, votre abonnement
                     aux newsletters et flux d’actualités.</p>
-                <div class="create_account_form">
+                <div class="create_account_form mt-5 ps-3">
                     <form @submit="createAccountData" id="connection_form_data">
-                        <h2>Civilité *</h2>
-                        <div class="civility_div">
-                            <div class="radio_button">
+                        <h2 class="mb-3">Civilité *</h2>
+                        <div class="civility_div d-flex mb-4">
+                            <div class="radio_button me-5">
                                 <input v-model="civility" id="profile_civility1" name="profile_civility" type="radio"
                                     value="Mme">
                                 <label for="profile_civility1">Mme</label>
@@ -106,7 +106,7 @@ export default {
                                 required />
                         </div>
                         <h2>Date de naissance *</h2>
-                        <div class="born_div">
+                        <div class="born_div d-flex">
                             <input type="hidden">
                             <div class="born_input2 day">
                                 <select v-model="day" name="day" id="day">
@@ -161,11 +161,15 @@ export default {
                                 </select>
                             </div>
                         </div>
-                        <p>Pour plus de renseignements sur la façon dont nous utilisons vos données à caractère personnel,
+                        <p class="mt-4 pe-3">Pour plus de renseignements sur la façon dont nous utilisons vos données à
+                            caractère personnel,
                             veuillez consulter notre <a href="">Politique de Confidentialité.</a></p>
-                        <!-- <router-link :to="{ name: 'login' }"> -->
-                        <button type="submit" id="create_account_btn">créer mon compte</button>
-                        <!-- </router-link> -->
+                        <div class="text-center">
+                            <!-- <router-link :to="{ name: 'login' }"> -->
+                            <button type="submit" id="create_account_btn" class="mt-4 text-uppercase w-75">créer mon
+                                compte</button>
+                            <!-- </router-link> -->
+                        </div>
                     </form>
                 </div>
             </div>
@@ -176,19 +180,11 @@ export default {
 <style scoped>
 .create_account_div {
     background-color: #ddd;
-    margin-bottom: 50px;
-}
-
-.account_creation {
-    padding: 50px 50px;
-    text-align: center;
 }
 
 .account_creation h1 {
     font-family: 'Arapey', serif;
     font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 30px;
 }
 
 .account_creation p {
@@ -197,35 +193,15 @@ export default {
     width: 400px;
 }
 
-.create_account_form {
-    text-align: left;
-    margin-top: 40px;
-    padding-left: 20px;
-}
-
 .create_account_form h2 {
-    margin-bottom: 10px;
     color: grey;
     font-size: 15px;
     font-family: 'Arapey', serif;
 }
 
-.create_account_form #forgot_password {
-    color: black;
-    text-decoration: none;
-    font-family: 'Arapey', serif;
-    font-size: 15px;
-}
-
-.create_account_form #forgot_password:hover {
-    text-decoration: underline;
-}
-
 .create_account_form p {
-    margin-top: 20px;
     font-family: 'Arapey', serif;
     font-size: 15px;
-    padding-right: 25px;
 }
 
 .create_account_form a {
@@ -239,13 +215,6 @@ export default {
     text-decoration: none;
 }
 
-.civility_div {
-    display: flex;
-    margin-bottom: 20px;
-}
-.radio_button{
-    margin-right: 60px;
-}
 .input_div input {
     border: 0;
     border-bottom: 1px solid #000;
@@ -256,10 +225,9 @@ export default {
     background-color: #ddd;
 }
 
-.born_div {
-    display: flex;
+/* .born_div {
     flex-flow: row nowrap;
-}
+} */
 
 .born_input2 {
     flex-basis: 33.33333333333%;
@@ -274,17 +242,13 @@ export default {
 
 #create_account_btn {
     min-height: 50px;
-    width: 250px;
-    margin-top: 40px;
     border: 2px solid rgb(227, 167, 14);
     background-color: #ddd;
     font-weight: bold;
-    text-transform: uppercase;
     font-size: 20px;
 }
 
 #create_account_btn:hover {
     background-color: rgb(227, 167, 14);
     color: white;
-}
-</style>
+}</style>
