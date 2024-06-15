@@ -8,12 +8,12 @@ import { createPinia } from 'pinia';
 // Import des components
 import App from './App.vue'
 
-import Account from './view/Account.vue'
+import Login from './view/Login.vue'
 import Bracelets from './view/Bracelets.vue'
 import Cart from './view/Cart.vue'
 import Collection from './view/Collection.vue'
-import Createaccount from './view/Createaccount.vue'
 import DetailProduct from './view/DetailProduct.vue'
+import Register from './view/Register.vue'
 import Home from './view/Home.vue'
 
 import Adress from './components/Adress.vue'
@@ -25,16 +25,16 @@ import Wishlist from './components/Wishlist.vue'
 
 const routes = [
     {path: '/', component: Home, name: "home" },
-    {path: '/connexion', component: Account, name: "account" },
     {path: '/mes-adresses', component: Adress, name: "adress" },
     {path: '/bracelets', component: Bracelets, name: "bracelets" },
     {path: '/mon-panier', component: Cart, name: "cart" },
     {path: '/collection/:id', component: Collection, name: "collection" },
-    {path: '/inscription', component: Createaccount, name: "createaccount" },
     {path: '/produit/:id', component: DetailProduct, name: 'detailproduct' },
     {path: '/aperçu', component: Insight, name: "insight" },
+    {path: '/connexion', component: Login, name: "login" },
     {path: '/mes-commandes', component: Myorder, name: "myorder" },
     {path: '/mon-profil', component: Profile, name: "profile" },
+    {path: '/inscription', component: Register, name: "register" },
     {path: '/ma-wishlist', component: Wishlist, name: "wishlist" },
 ]
 

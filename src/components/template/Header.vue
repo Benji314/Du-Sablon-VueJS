@@ -15,7 +15,7 @@ export default {
                 <div class="col-2 col-md-2 offset-md-1 col-lg-2 offset-lg-2 mt-3 col_class">
                     <div class="row text-center">
                         <div class="col-12 mt-4 col-md-6 main-nav ">
-                            <router-link :to="{ name: 'account' }">
+                            <router-link :to="{ name: 'login' }">
                                 <i class="fa-regular fa-circle-user"></i>
                             </router-link>
                         </div>

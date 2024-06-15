@@ -92,7 +92,7 @@ export default {
                     <li>Vérifier vos commandes</li>
                     <li>Gérer votre collection et vos services commandés</li>
                 </ul>
-                <router-link :to="{ name: 'createaccount' }">
+                <router-link :to="{ name: 'register' }">
                     <button type="submit" id="create_account_btn">créer mon compte</button>
                 </router-link>
             </div>
