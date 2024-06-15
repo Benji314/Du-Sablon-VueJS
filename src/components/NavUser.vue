@@ -10,7 +10,7 @@ export default {
             <nav>
                 <ul class="profil_menu">
                     <li>
-                        <router-link :to="{ name: 'login' }">
+                        <router-link :to="{ name: 'insight' }">
                             aperçu
                         </router-link>
                     </li>

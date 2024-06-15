@@ -17,7 +17,7 @@ import DetailProduct from './view/DetailProduct.vue'
 import Home from './view/Home.vue'
 
 import Adress from './components/Adress.vue'
-import Login from './components/Login.vue'
+import Insight from './components/Insight.vue'
 import Myorder from './components/Myorder.vue'
 import Profile from './components/Profile.vue'
 import Wishlist from './components/Wishlist.vue'
@@ -32,7 +32,7 @@ const routes = [
     {path: '/collection/:id', component: Collection, name: "collection" },
     {path: '/inscription', component: Createaccount, name: "createaccount" },
     {path: '/produit/:id', component: DetailProduct, name: 'detailproduct' },
-    {path: '/aperçu', component: Login, name: "login" },
+    {path: '/aperçu', component: Insight, name: "insight" },
     {path: '/mes-commandes', component: Myorder, name: "myorder" },
     {path: '/mon-profil', component: Profile, name: "profile" },
     {path: '/ma-wishlist', component: Wishlist, name: "wishlist" },

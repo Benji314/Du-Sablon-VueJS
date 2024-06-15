@@ -42,7 +42,7 @@ export default {
             const isAuthenticated = this.checkAuthentication();
 
             if (isAuthenticated) {
-                this.$router.push({ name: 'login' });
+                this.$router.push({ name: 'insight' });
             } else {
                 console.log("L'utilisateur n'est pas authentifié.");
             }

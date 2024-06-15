@@ -44,7 +44,7 @@ export default {
                 console.log("Mot de passe:", this.password);
                 console.log("Confirmation du mot de passe:", this.confirm_password);
                 console.log("Date de naissance:", this.day, "/", this.month, "/", this.year);
-                this.$router.push({ name: 'login' });
+                this.$router.push({ name: 'insight' });
             } else {
                 console.log("Veuillez remplir tous les champs requis.");
             }
@@ -58,7 +58,8 @@ export default {
         <div class="col-md-4 offset-md-4 col_class create_account_div mb-5 mt-4">
             <div class="account_creation p-5">
                 <h1 class="text-center text-uppercase mb-4">créez votre compte</h1>
-                <p>Cet espace vous permet de gérer vos informations personnelles, vos commandes en ligne, votre abonnement
+                <p>Cet espace vous permet de gérer vos informations personnelles, vos commandes en ligne, votre
+                    abonnement
                     aux newsletters et flux d’actualités.</p>
                 <div class="create_account_form mt-5 ps-3">
                     <form @submit="createAccountData" id="connection_form_data">
@@ -89,7 +90,8 @@ export default {
                         </div>
                         <h2>Confirmation de l'adresse email *</h2>
                         <div class="input_div">
-                            <input v-model="confirm_email" id="profile_confirm_email" type="text" placeholder required />
+                            <input v-model="confirm_email" id="profile_confirm_email" type="text" placeholder
+                                required />
                         </div>
                         <h2>N° de téléphone</h2>
                         <div class="input_div">
@@ -251,4 +253,5 @@ export default {
 #create_account_btn:hover {
     background-color: rgb(227, 167, 14);
     color: white;
-}</style>
+}
+</style>
