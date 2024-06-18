@@ -24,14 +24,33 @@ import Wishlist from './components/Wishlist.vue'
 
 
 const routes = [
+<<<<<<< Updated upstream
     {path: '/', component: Home, name: "home" },
+=======
+<<<<<<< HEAD
+
+    {path: '/', component: Home, name: "home" },
+    {path: '/connexion', component: Account, name: "account" },
+=======
+    {path: '/', component: Home, name: "home" },
+>>>>>>> f8a0cbbafe6d562af0eb7f516ef8468cc13e2c32
+>>>>>>> Stashed changes
     {path: '/mes-adresses', component: Adress, name: "adress" },
     {path: '/bracelets', component: Bracelets, name: "bracelets" },
     {path: '/mon-panier', component: Cart, name: "cart" },
     {path: '/collection/:id', component: Collection, name: "collection" },
     {path: '/produit/:id', component: DetailProduct, name: 'detailproduct' },
+<<<<<<< Updated upstream
     {path: '/aperçu', component: Insight, name: "insight" },
     {path: '/connexion', component: Login, name: "login" },
+=======
+<<<<<<< HEAD
+    {path: '/aperçu', component: Login, name: "login" },
+=======
+    {path: '/aperçu', component: Insight, name: "insight" },
+    {path: '/connexion', component: Login, name: "login" },
+>>>>>>> f8a0cbbafe6d562af0eb7f516ef8468cc13e2c32
+>>>>>>> Stashed changes
     {path: '/mes-commandes', component: Myorder, name: "myorder" },
     {path: '/mon-profil', component: Profile, name: "profile" },
     {path: '/inscription', component: Register, name: "register" },

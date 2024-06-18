@@ -95,9 +95,19 @@ export default {
                             <h1 class="text-center">BRACELETS</h1>
                         </div>
                     </div>
+<<<<<<< Updated upstream
 
                     <!-- Caroussel  -->
                     <div id="carouselBracelets" class="carousel slide mb-5" data-bs-ride="carousel">
+=======
+<<<<<<< HEAD
+                    <div id="carouselBracelets" class="carousel slide" data-bs-ride="carousel">
+=======
+
+                    <!-- Caroussel  -->
+                    <div id="carouselBracelets" class="carousel slide mb-5" data-bs-ride="carousel">
+>>>>>>> f8a0cbbafe6d562af0eb7f516ef8468cc13e2c32
+>>>>>>> Stashed changes
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                                 class="active" aria-current="true" aria-label="Slide 1"></button>
